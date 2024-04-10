@@ -189,10 +189,11 @@ class SndTransport:
                 print("SENDER: ERROR: Unexpected ACK; Wanted: " + str(self.cur_seqnum) + " Received: " + str(pkt.acknum))
             # self.send(pkt.payload)
             # print("SENDER: Received ACK for " + str(pkt.seqnum) + " but incorrect")
+            stop_timer(self)
 
         # if the ack packet is fine, then we send it over to layer 5
         else:
-            print("SENDER: Received ACK for " + str(pkt.seqnum))
+            print("SENDER: Received ACK for " + str(pkt.seqnum) + "\n")
             # if pkt.seqnum == self.acknum:
                 # return
             message = Msg(pkt.payload)
@@ -262,10 +263,13 @@ class RcvTransport:
             to_layer3(self, ack)
         
         else:
-            print("RECEIVER: Sending NACK for seqnum " + str(packet.seqnum))
+            if not expected:
+                print("RECEIVER: Sending NACK (Unexpected) for seqnum " + str(packet.seqnum))
+            elif not correct_checksum:
+                print("RECEIVER: Sending NACK (Corrupted) for seqnum " + str(packet.seqnum))
             #send NACK
             # TODO: Determine how to send NACKs
-            nack = Pkt(seqnum = self.seqnum, acknum = packet.seqnum-1, checksum = 0, payload = packet.payload)
+            nack = Pkt(seqnum = self.seqnum, acknum = (packet.seqnum - 1 + self.seqnum_limit) % self.seqnum_limit, checksum = 0, payload = packet.payload)
             nack.checksum = calc_checksum(nack)
             to_layer3(self, nack)
 
