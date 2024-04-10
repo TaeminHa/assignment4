@@ -138,7 +138,7 @@ class SndTransport:
 
         # stands for the most recently attempted (possibly failed) sequence number
         # this field should always be last successfully sent seq number + 1
-        self.cur_seqnum = 1
+        self.cur_seqnum = 0
 
         # also stands for most recently attempted message
         # keep track for retransmitting purposes
@@ -159,6 +159,7 @@ class SndTransport:
         pkt.checksum = calc_checksum(pkt)
 
         # check if there's any unacknowledged packets; Refer to __init__()
+        # this basically makes sure that there's only 1 outstanding packet
         if self.acknum == self.seqnum:
             self.message = message
             print("SENDER: Sending " + str(self.cur_seqnum))
@@ -197,11 +198,11 @@ class SndTransport:
             # if pkt.seqnum == self.acknum:
                 # return
             message = Msg(pkt.payload)
-            to_layer5(self, message)
+            # to_layer5(self, message)
 
             self.seqnum = self.cur_seqnum
             self.cur_seqnum = (self.cur_seqnum + 1) % self.seqnum_limit
-            self.acknum = pkt.acknum
+            self.acknum = self.seqnum
             stop_timer(self)
             
     # Called when the sender's timer goes off.
@@ -226,7 +227,7 @@ class RcvTransport:
         # acknum represents the last ACK we sent; This accounts for possible loss of ACK message
 
         # if last_acked == incoming seq_num, that means there was a loss in ACK and it's a duplicate
-        self.seqnum = 1
+        self.seqnum = 0
         self.last_acked = 0
         self.message = None
 
@@ -255,7 +256,7 @@ class RcvTransport:
                 to_layer5(self, message)
             # send ACK
             print("RECEIVER: Sending ACK for seqnum " + str(packet.seqnum))
-            ack = Pkt(seqnum = packet.seqnum, acknum = packet.seqnum, checksum = 0, payload = packet.payload)
+            ack = Pkt(seqnum = packet.seqnum, acknum = packet.seqnum, checksum = 0, payload = b'                    ')
             ack.checksum = calc_checksum(ack)
             # update last_acked and expected seqnum
             self.last_acked = packet.seqnum
@@ -269,7 +270,7 @@ class RcvTransport:
                 print("RECEIVER: Sending NACK (Corrupted) for seqnum " + str(packet.seqnum))
             #send NACK
             # TODO: Determine how to send NACKs
-            nack = Pkt(seqnum = self.seqnum, acknum = (packet.seqnum - 1 + self.seqnum_limit) % self.seqnum_limit, checksum = 0, payload = packet.payload)
+            nack = Pkt(seqnum = self.seqnum, acknum = (packet.seqnum - 1 + self.seqnum_limit) % self.seqnum_limit, checksum = 0, payload = b'                    ')
             nack.checksum = calc_checksum(nack)
             to_layer3(self, nack)
 
