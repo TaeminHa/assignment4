@@ -177,6 +177,7 @@ class SndTransport:
         # Refer to the assignment webpage for the core logic.
         
         correct_checksum = pkt.checksum == calc_checksum(pkt)
+        # check for NACK and actual acknum match
         correct_acknum = pkt.payload != b'                    ' and self.cur_seqnum == pkt.acknum
         
         # pkt must be an ack packet since it's unidirectional
@@ -188,19 +189,12 @@ class SndTransport:
                 print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
             if not correct_acknum:
                 print("SENDER: ERROR: Unexpected ACK; Wanted: " + str(self.cur_seqnum) + " Received: " + str(pkt.acknum))
-            # self.send(pkt.payload)
-            # print("SENDER: Received ACK for " + str(pkt.seqnum) + " but incorrect")
-            # stop_timer(self)
-            # print()
 
         # if the ack packet is fine, then we send it over to layer 5
+        # and update SENDER metadata
         else:
-            # print("SENDER: Received ACK for " + str(pkt.seqnum) + "\n")
-            # if pkt.seqnum == self.acknum:
-                # return
             print("SENDER: Received ACK for " + str(pkt.payload))
             message = Msg(pkt.payload)
-            # to_layer5(self, message)
 
             self.seqnum = self.cur_seqnum
             self.acknum = self.seqnum
@@ -256,10 +250,11 @@ class RcvTransport:
                 # 1st time seeing this packet, and seqnum and checksum are good; send it over to layer5
                 message = Msg(packet.payload)
                 to_layer5(self, message)
+            
             # send ACK
-            # print("RECEIVER: Sending ACK for seqnum " + str(packet.seqnum))
             ack = Pkt(seqnum = packet.seqnum, acknum = packet.seqnum, checksum = 0, payload = packet.payload)
             ack.checksum = calc_checksum(ack)
+            
             # update last_acked and expected seqnum
             self.last_acked = packet.seqnum
             self.seqnum = (self.last_acked + 1) % self.seqnum_limit
@@ -267,6 +262,8 @@ class RcvTransport:
             to_layer3(self, ack)
         
         else:
+            #send NACK, which will have an empty payload;
+            # I tried to use acknum to indicate NACK, but acknum is forced to be between 0, seqnum_limit-1 so just use payload
             nack = Pkt(seqnum = self.seqnum, acknum = packet.seqnum, checksum = 0, payload = b'                    ')
             nack.checksum = calc_checksum(nack)
 
@@ -274,8 +271,7 @@ class RcvTransport:
                 print("RECEIVER: Sending NACK (Unexpected) for seqnum " + str(nack.acknum))
             elif not correct_checksum:
                 print("RECEIVER: Sending NACK (Corrupted) for seqnum " + str(nack.acknum))
-            #send NACK
-            # TODO: Determine how to send NACKs
+            
             to_layer3(self, nack)
 
 
