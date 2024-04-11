@@ -100,7 +100,6 @@ class Pkt:
 
 def calc_checksum(pkt:Pkt):
     # TODO: Write a function that calculates a checksum given a packet.
-    
     checksum = 0
 
     for i in range(0, len(pkt.payload), 2):
@@ -146,9 +145,15 @@ class SndTransport:
 
         # states for the sliding window
         # base is the leftmost unacknowledged packet
-        self.base = 0
+        self.base = 1
 
         self.window_size = 8
+
+        # self.window = [i % seqnum_limit for i in range(self.window_size)]
+
+        # print(self.window)
+
+        self.window = []
 
         self.buffer = {}
 
@@ -157,7 +162,23 @@ class SndTransport:
     # The argument `message` is a Msg containing the data to be sent.
     def send(self, message):
         # check if we are still within window size
-        if self.cur_seqnum < self.base + self.window_size:
+        # if self.cur_seqnum < self.base + self.window_size:
+        # if self.cur_seqnum in self.window:
+        if len(self.window) < self.window_size:
+            # check if there are previous values
+            # if len(self.window) > 0:
+            #     if self.cur_seqnum == (self.window[-1] + 1) % self.seqnum_limit:
+            #         self.window.append((self.window[-1] + 1) % self.seqnum_limit)
+            #     else:
+            #         print("SENDER: ERROR: WINDOW IS NOT CONTIGUOUS")
+            #         print("window", self.window)
+            #         print("cur_seqnum", self.cur_seqnum)
+            #         return
+            # # first value added to queue
+            # else:
+            #     self.window.append(self.cur_seqnum)
+            self.window.append(self.cur_seqnum)
+
             pkt = Pkt(seqnum = self.cur_seqnum, acknum = self.acknum, checksum = 0, payload = message.data)
             pkt.checksum = calc_checksum(pkt)
 
@@ -166,58 +187,63 @@ class SndTransport:
             to_layer3(self, pkt)
 
             if self.base == self.cur_seqnum:
+                print("timer started")
                 start_timer(self, 10.0)
             
             self.cur_seqnum = (self.cur_seqnum + 1) % self.seqnum_limit
 
+            # update our window
+            # self.window.append(self.window.pop(0))
+
         else:
             print("SENDER: ERROR: WINDOW IS FULL")
-            exit()
-
+            print("full window", self.window)
+            return
     # Called from layer 3, when a packet arrives for layer 4 at SndTransport.
     # The argument `packet` is a Pkt containing the newly arrived packet.
     def recv(self, pkt):
         correct_checksum = pkt.checksum == calc_checksum(pkt)
         # check for NACK and actual acknum match
-        correct_acknum = self.base <= pkt.acknum <= self.base + self.window_size
-        # correct_acknum = self.base <= pkt.acknum <= self.cur_seqnum
+        # correct_acknum = self.base - 1 <= pkt.acknum <= self.base + self.window_size
+        correct_acknum = pkt.acknum in self.buffer
 
-        if not correct_checksum or not correct_acknum:
-            if not correct_checksum:
-                print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
-            if not correct_acknum:
-                print("SENDER: ERROR: Unexpected ACK; Wanted within bounds: " + str(self.base) + " and " + str(self.base + self.window_size) + " Received: " + str(pkt.acknum))
+        # if not correct_checksum or not correct_acknum:
+        #     if not correct_checksum:
+        #         print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
+        #     if not correct_acknum:
+        #         print("SENDER: ERROR: Unexpected ACK; Wanted within bounds: ")
+        #         print("error buffer", self.buffer.keys())
+        #         print("error base", self.base)
+        #         print("error acknum", pkt.acknum)
 
-        else:
+        # if not correct_checksum:
+        #     print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
+
+        # else:
             # we've received a valid packet. all packets with seqnums before this ack are also acked
-            if pkt.acknum >= self.base and pkt.acknum < self.cur_seqnum:
-                # move window
-                new_base = (pkt.acknum + 1) % self.seqnum_limit
+            # if pkt.acknum >= self.base - 1 and pkt.acknum <= self.base + self.window_size:
+        if pkt.acknum in self.buffer:
+            # move window
+            new_base = (pkt.acknum + 1) % self.seqnum_limit
 
+
+            # clear buffer
+            while self.base != new_base:
+                if self.base in self.buffer:
+                    del self.buffer[self.base]
+                self.base = (self.base + 1) % self.seqnum_limit
+            
+            # self.window = [num for num in self.window if num > self.base]
+            self.window = []
+                    
+            # stop_timer(self)
+
+            if not self.buffer:
                 stop_timer(self)
+            print("updated window", self.window)
+            print("new base", self.base)
+            print("new buffer", self.buffer.keys())
 
-                while self.base != new_base:
-                    if self.base in self.buffer:
-                        del self.buffer[self.base]
-                    self.base = (self.base + 1) % self.seqnum_limit
-                
-                # self.base = pkt.acknum + 1
-                # del self.buffer[pkt.acknum]
-
-                # if self.base == self.cur_seqnum:
-                #     stop_timer(self)
-                # else:
-                #     start_timer(self, 10.0)
-
-        # if pkt.acknum >= self.base and pkt.acknum < self.cur_seqnum:
-        #     # move window
-        #     self.base = pkt.acknum + 1
-        #     del self.buffer[pkt.acknum]
-
-        #     if self.base == self.cur_seqnum:
-        #         stop_timer(self)
-        #     else:
-        #         start_timer(self, 10.0)
 
             
     # Called when the sender's timer goes off.
@@ -274,59 +300,13 @@ class RcvTransport:
         
         else:
             # resend the old code
-            ack = Pkt(seqnum = self.seqnum, acknum = self.seqnum, checksum = 0, payload = packet.payload)
+            ack = Pkt(seqnum = self.last_acked, acknum = self.last_acked, checksum = 0, payload = packet.payload)
             ack.checksum = calc_checksum(ack)
             to_layer3(self, ack)
         # else:
             # on failure, send the last acked message
         # ack_pkt = Pkt(seqnum = self.last_acked, acknum = self.last_acked, checksum = 0, payload = packet.payload)
         # ack_pkt.checksum = calc_checksum(ack_pkt)
-
-
-
-        # PART 1 CODE
-        # # and pass/discard the packet to layer 5 based on them.
-        # # Plus, send an ACK message based on the validity of the packet.
-        # # Refer to the assignment webpage for the core logic.
-
-        # # TODO: Check the packet if it is corrupted or unexpected
-        # expected = packet.seqnum == self.seqnum or packet.seqnum == self.last_acked
-        # correct_checksum = packet.checksum == calc_checksum(packet)
-
-        # print("RECEIVER: Received Packet " + str(packet.payload) + " " + str(self.seqnum) + " " + str(self.last_acked))
-        
-        # if expected and correct_checksum:
-        #     # previous ack might've been lost, so we need to detect duplicate packet
-        #     if packet.seqnum == self.last_acked:
-        #         # don't send it to layer_5 bc this is a duplicate
-        #         print("RECEIVER: Duplicate Packet; Previous ACK failed")
-        #     else:
-        #         # 1st time seeing this packet, and seqnum and checksum are good; send it over to layer5
-        #         message = Msg(packet.payload)
-        #         to_layer5(self, message)
-            
-        #     # send ACK
-        #     ack = Pkt(seqnum = packet.seqnum, acknum = packet.seqnum, checksum = 0, payload = packet.payload)
-        #     ack.checksum = calc_checksum(ack)
-            
-        #     # update last_acked and expected seqnum
-        #     self.last_acked = packet.seqnum
-        #     self.seqnum = (self.last_acked + 1) % self.seqnum_limit
-        #     print("RECEIVER: Sending ACK " + str(packet.payload) + " " + str(ack.acknum))
-        #     to_layer3(self, ack)
-        
-        # else:
-        #     #send NACK, which will have an empty payload;
-        #     # I tried to use acknum to indicate NACK, but acknum is forced to be between 0, seqnum_limit-1 so just use payload
-        #     nack = Pkt(seqnum = self.seqnum, acknum = packet.seqnum, checksum = 0, payload = b'                    ')
-        #     nack.checksum = calc_checksum(nack)
-
-        #     if not expected:
-        #         print("RECEIVER: Sending NACK (Unexpected) for seqnum " + str(nack.acknum))
-        #     elif not correct_checksum:
-        #         print("RECEIVER: Sending NACK (Corrupted) for seqnum " + str(nack.acknum))
-            
-        #     to_layer3(self, nack)
 
 
     # Ignore this method!
