@@ -222,7 +222,7 @@ class SndTransport:
             
     # Called when the sender's timer goes off.
     def timer_interrupt(self):
-        print("TIMER INTERRUPT RESENDING PACKETS")
+        # print("TIMER INTERRUPT RESENDING PACKETS")
         # restart timer
         start_timer(self, 10.0)
         # resend buffer
@@ -253,20 +253,34 @@ class RcvTransport:
     # Called from layer 3, when a packet arrives for layer 4 at RcvTransport.
     # The argument `packet` is a Pkt containing the newly arrived packet.
     def recv(self, packet):
-        if packet.seqnum == self.seqnum and packet.checksum == calc_checksum(packet):
+        expected = packet.seqnum == self.seqnum or packet.seqnum == self.last_acked
+        correct_checksum = packet.checksum == calc_checksum(packet)
+
+        ack_num = self.seqnum
+
+        if packet.seqnum == self.last_acked:
+            print("RECEIVER: Duplicate Packet; Previous ACK failed")
+
+        if expected and correct_checksum:
             message = Msg(packet.payload)
             to_layer5(self, message)
 
             self.seqnum = (self.seqnum + 1) % self.seqnum_limit
             self.last_acked = packet.seqnum
+
+            ack = Pkt(seqnum = ack_num, acknum = ack_num, checksum = 0, payload = packet.payload)
+            ack.checksum = calc_checksum(ack)
+            to_layer3(self, ack)
         
+        else:
+            # resend the old code
+            ack = Pkt(seqnum = self.seqnum, acknum = self.seqnum, checksum = 0, payload = packet.payload)
+            ack.checksum = calc_checksum(ack)
+            to_layer3(self, ack)
         # else:
             # on failure, send the last acked message
         # ack_pkt = Pkt(seqnum = self.last_acked, acknum = self.last_acked, checksum = 0, payload = packet.payload)
         # ack_pkt.checksum = calc_checksum(ack_pkt)
-        ack = Pkt(seqnum = self.seqnum, acknum = self.seqnum, checksum = 0, payload = packet.payload)
-        ack.checksum = calc_checksum(ack)
-        to_layer3(self, ack)
 
 
 
