@@ -149,10 +149,6 @@ class SndTransport:
 
         self.window_size = 8
 
-        # self.window = [i % seqnum_limit for i in range(self.window_size)]
-
-        # print(self.window)
-
         self.window = []
 
         self.buffer = {}
@@ -165,18 +161,6 @@ class SndTransport:
         # if self.cur_seqnum < self.base + self.window_size:
         # if self.cur_seqnum in self.window:
         if len(self.window) < self.window_size:
-            # check if there are previous values
-            # if len(self.window) > 0:
-            #     if self.cur_seqnum == (self.window[-1] + 1) % self.seqnum_limit:
-            #         self.window.append((self.window[-1] + 1) % self.seqnum_limit)
-            #     else:
-            #         print("SENDER: ERROR: WINDOW IS NOT CONTIGUOUS")
-            #         print("window", self.window)
-            #         print("cur_seqnum", self.cur_seqnum)
-            #         return
-            # # first value added to queue
-            # else:
-            #     self.window.append(self.cur_seqnum)
             self.window.append(self.cur_seqnum)
 
             pkt = Pkt(seqnum = self.cur_seqnum, acknum = self.acknum, checksum = 0, payload = message.data)
@@ -187,17 +171,12 @@ class SndTransport:
             to_layer3(self, pkt)
 
             if self.base == self.cur_seqnum:
-                print("timer started")
                 start_timer(self, 10.0)
             
             self.cur_seqnum = (self.cur_seqnum + 1) % self.seqnum_limit
 
-            # update our window
-            # self.window.append(self.window.pop(0))
-
         else:
             print("SENDER: ERROR: WINDOW IS FULL")
-            print("full window", self.window)
             return
     # Called from layer 3, when a packet arrives for layer 4 at SndTransport.
     # The argument `packet` is a Pkt containing the newly arrived packet.
@@ -207,25 +186,14 @@ class SndTransport:
         # correct_acknum = self.base - 1 <= pkt.acknum <= self.base + self.window_size
         correct_acknum = pkt.acknum in self.buffer
 
-        # if not correct_checksum or not correct_acknum:
-        #     if not correct_checksum:
-        #         print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
-        #     if not correct_acknum:
-        #         print("SENDER: ERROR: Unexpected ACK; Wanted within bounds: ")
-        #         print("error buffer", self.buffer.keys())
-        #         print("error base", self.base)
-        #         print("error acknum", pkt.acknum)
-
         if not correct_checksum:
             print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
 
         else:
             # we've received a valid packet. all packets with seqnums before this ack are also acked
-            # if pkt.acknum >= self.base - 1 and pkt.acknum <= self.base + self.window_size:
-            if pkt.acknum in self.buffer:
+            if correct_acknum:
                 # move window
                 new_base = (pkt.acknum + 1) % self.seqnum_limit
-
 
                 # clear buffer
                 while self.base != new_base:
@@ -233,26 +201,17 @@ class SndTransport:
                         del self.buffer[self.base]
                     self.base = (self.base + 1) % self.seqnum_limit
                 
-                # self.window = [num for num in self.window if num > self.base]
                 self.window = []
-                        
-                # stop_timer(self)
 
                 # if not self.buffer:
                 #     stop_timer(self)
-                print("updated window", self.window)
-                print("new base", self.base)
-                print("new buffer", self.buffer.keys())
-
 
             
     # Called when the sender's timer goes off.
     def timer_interrupt(self):
-        # print("TIMER INTERRUPT RESENDING PACKETS")
         # restart timer
         start_timer(self, 10.0)
         # resend buffer
-        # for seqnum in range(self.base, self.cur_seqnum):
         for seqnum in self.buffer:
             pkt = self.buffer[seqnum]
             to_layer3(self, pkt)
@@ -310,10 +269,6 @@ class RcvTransport:
             ack = Pkt(seqnum = self.last_acked, acknum = self.last_acked, checksum = 0, payload = packet.payload)
             ack.checksum = calc_checksum(ack)
             to_layer3(self, ack)
-        # else:
-            # on failure, send the last acked message
-        # ack_pkt = Pkt(seqnum = self.last_acked, acknum = self.last_acked, checksum = 0, payload = packet.payload)
-        # ack_pkt.checksum = calc_checksum(ack_pkt)
 
 
     # Ignore this method!
