@@ -175,9 +175,9 @@ class SndTransport:
             
             self.cur_seqnum = (self.cur_seqnum + 1) % self.seqnum_limit
 
-        else:
-            print("SENDER: ERROR: WINDOW IS FULL")
-            return
+        # else:
+        #     print("SENDER: ERROR: WINDOW IS FULL")
+        #     return
     # Called from layer 3, when a packet arrives for layer 4 at SndTransport.
     # The argument `packet` is a Pkt containing the newly arrived packet.
     def recv(self, pkt):
@@ -186,10 +186,11 @@ class SndTransport:
         # correct_acknum = self.base - 1 <= pkt.acknum <= self.base + self.window_size
         correct_acknum = pkt.acknum in self.buffer
 
-        if not correct_checksum:
-            print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
+        # if not correct_checksum:
+        #     print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
 
-        else:
+        # else:
+        if correct_checksum:
             # we've received a valid packet. all packets with seqnums before this ack are also acked
             if correct_acknum:
                 # move window
@@ -245,7 +246,7 @@ class RcvTransport:
         ack_num = self.seqnum
 
         if packet.seqnum == self.last_acked:
-            print("RECEIVER: Duplicate Packet; Previous ACK failed")
+            # print("RECEIVER: Duplicate Packet; Previous ACK failed")
 
             ack = Pkt(seqnum = self.last_acked, acknum = self.last_acked, checksum = 0, payload = packet.payload)
             ack.checksum = calc_checksum(ack)

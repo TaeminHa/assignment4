@@ -162,12 +162,12 @@ class SndTransport:
         # this basically makes sure that there's only 1 outstanding packet
         if self.acknum == self.seqnum:
             self.message = message
-            print("SENDER: Sending " + str(pkt.payload) + " " + str(pkt.seqnum) + " " + str(self.seqnum) + " " + str(self.acknum))
+            # print("SENDER: Sending " + str(pkt.payload) + " " + str(pkt.seqnum) + " " + str(self.seqnum) + " " + str(self.acknum))
             to_layer3(self, pkt)
             start_timer(self, 10.0)
-        else:
-            print("SENDER: ERROR: THERE CAN ONLY BE 1 OUTSTANDING PACKET")
-            exit()
+        # else:
+        #     print("SENDER: ERROR: THERE CAN ONLY BE 1 OUTSTANDING PACKET")
+        #     exit()
 
     # Called from layer 3, when a packet arrives for layer 4 at SndTransport.
     # The argument `packet` is a Pkt containing the newly arrived packet.
@@ -184,16 +184,16 @@ class SndTransport:
         # check the checksum field for corruption
         # if any of the fields fail, we DO NOT have to retransmit and just ignore; 
         # this will be handled by the timeout
-        if not correct_checksum or not correct_acknum:
-            if not correct_checksum:
-                print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
-            if not correct_acknum:
-                print("SENDER: ERROR: Unexpected ACK; Wanted: " + str(self.cur_seqnum) + " Received: " + str(pkt.acknum))
+        # if not correct_checksum or not correct_acknum:
+        #     if not correct_checksum:
+        #         print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
+        #     if not correct_acknum:
+        #         print("SENDER: ERROR: Unexpected ACK; Wanted: " + str(self.cur_seqnum) + " Received: " + str(pkt.acknum))
 
         # if the ack packet is fine, then we send it over to layer 5
         # and update SENDER metadata
-        else:
-            print("SENDER: Received ACK for " + str(pkt.payload))
+        if correct_checksum and correct_acknum:
+            # print("SENDER: Received ACK for " + str(pkt.payload))
             message = Msg(pkt.payload)
 
             self.seqnum = self.cur_seqnum
@@ -205,7 +205,7 @@ class SndTransport:
     def timer_interrupt(self):
         # TODO: handle retransmission when the timer expires
         # Refer to the assignment webpage for the core logic.
-        print("SENDER: Timer Expired; Retransmit " + str(self.message))
+        # print("SENDER: Timer Expired; Retransmit " + str(self.message))
         self.send(self.message)
 
 # RcvTransport: a receiver transport layer (layer 4)
@@ -239,14 +239,14 @@ class RcvTransport:
         expected = packet.seqnum == self.seqnum or packet.seqnum == self.last_acked
         correct_checksum = packet.checksum == calc_checksum(packet)
 
-        print("RECEIVER: Received Packet " + str(packet.payload) + " " + str(self.seqnum) + " " + str(self.last_acked))
+        # print("RECEIVER: Received Packet " + str(packet.payload) + " " + str(self.seqnum) + " " + str(self.last_acked))
         
         if expected and correct_checksum:
             # previous ack might've been lost, so we need to detect duplicate packet
-            if packet.seqnum == self.last_acked:
-                # don't send it to layer_5 bc this is a duplicate
-                print("RECEIVER: Duplicate Packet; Previous ACK failed")
-            else:
+            # if packet.seqnum == self.last_acked:
+            #     # don't send it to layer_5 bc this is a duplicate
+            #     print("RECEIVER: Duplicate Packet; Previous ACK failed")
+            if packet.seqnum != self.last_acked:
                 # 1st time seeing this packet, and seqnum and checksum are good; send it over to layer5
                 message = Msg(packet.payload)
                 to_layer5(self, message)
@@ -258,7 +258,7 @@ class RcvTransport:
             # update last_acked and expected seqnum
             self.last_acked = packet.seqnum
             self.seqnum = (self.last_acked + 1) % self.seqnum_limit
-            print("RECEIVER: Sending ACK " + str(packet.payload) + " " + str(ack.acknum))
+            # print("RECEIVER: Sending ACK " + str(packet.payload) + " " + str(ack.acknum))
             to_layer3(self, ack)
         
         else:
@@ -267,10 +267,10 @@ class RcvTransport:
             nack = Pkt(seqnum = self.seqnum, acknum = packet.seqnum, checksum = 0, payload = b'                    ')
             nack.checksum = calc_checksum(nack)
 
-            if not expected:
-                print("RECEIVER: Sending NACK (Unexpected) for seqnum " + str(nack.acknum))
-            elif not correct_checksum:
-                print("RECEIVER: Sending NACK (Corrupted) for seqnum " + str(nack.acknum))
+            # if not expected:
+            #     print("RECEIVER: Sending NACK (Unexpected) for seqnum " + str(nack.acknum))
+            # elif not correct_checksum:
+            #     print("RECEIVER: Sending NACK (Corrupted) for seqnum " + str(nack.acknum))
             
             to_layer3(self, nack)
 

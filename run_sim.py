@@ -46,6 +46,7 @@ import transport.init_sim as sim
 
 ## TODO: change this if you want to move onto the other part of the assignment
 ## To test your part1 implementation, change it to:
+# from transport.part1 import SndTransport, RcvTransport, Msg, Pkt
 from transport.part2 import SndTransport, RcvTransport, Msg, Pkt
 ## To test your part2 implementation, change it to:
 # from transport.part2 import SndTransport, RcvTransport, Msg, Pkt
