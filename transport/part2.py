@@ -216,33 +216,33 @@ class SndTransport:
         #         print("error base", self.base)
         #         print("error acknum", pkt.acknum)
 
-        # if not correct_checksum:
-        #     print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
+        if not correct_checksum:
+            print("SENDER: ERROR: Corrupted Packet; Checksum Mismatch")
 
-        # else:
+        else:
             # we've received a valid packet. all packets with seqnums before this ack are also acked
             # if pkt.acknum >= self.base - 1 and pkt.acknum <= self.base + self.window_size:
-        if pkt.acknum in self.buffer:
-            # move window
-            new_base = (pkt.acknum + 1) % self.seqnum_limit
+            if pkt.acknum in self.buffer:
+                # move window
+                new_base = (pkt.acknum + 1) % self.seqnum_limit
 
 
-            # clear buffer
-            while self.base != new_base:
-                if self.base in self.buffer:
-                    del self.buffer[self.base]
-                self.base = (self.base + 1) % self.seqnum_limit
-            
-            # self.window = [num for num in self.window if num > self.base]
-            self.window = []
-                    
-            # stop_timer(self)
+                # clear buffer
+                while self.base != new_base:
+                    if self.base in self.buffer:
+                        del self.buffer[self.base]
+                    self.base = (self.base + 1) % self.seqnum_limit
+                
+                # self.window = [num for num in self.window if num > self.base]
+                self.window = []
+                        
+                # stop_timer(self)
 
-            if not self.buffer:
-                stop_timer(self)
-            print("updated window", self.window)
-            print("new base", self.base)
-            print("new buffer", self.buffer.keys())
+                # if not self.buffer:
+                #     stop_timer(self)
+                print("updated window", self.window)
+                print("new base", self.base)
+                print("new buffer", self.buffer.keys())
 
 
             
@@ -252,7 +252,8 @@ class SndTransport:
         # restart timer
         start_timer(self, 10.0)
         # resend buffer
-        for seqnum in range(self.base, self.cur_seqnum):
+        # for seqnum in range(self.base, self.cur_seqnum):
+        for seqnum in self.buffer:
             pkt = self.buffer[seqnum]
             to_layer3(self, pkt)
 
@@ -287,6 +288,12 @@ class RcvTransport:
         if packet.seqnum == self.last_acked:
             print("RECEIVER: Duplicate Packet; Previous ACK failed")
 
+            ack = Pkt(seqnum = self.last_acked, acknum = self.last_acked, checksum = 0, payload = packet.payload)
+            ack.checksum = calc_checksum(ack)
+            to_layer3(self, ack)
+
+            return
+
         if expected and correct_checksum:
             message = Msg(packet.payload)
             to_layer5(self, message)
@@ -299,7 +306,7 @@ class RcvTransport:
             to_layer3(self, ack)
         
         else:
-            # resend the old code
+            # resend the last acked message
             ack = Pkt(seqnum = self.last_acked, acknum = self.last_acked, checksum = 0, payload = packet.payload)
             ack.checksum = calc_checksum(ack)
             to_layer3(self, ack)

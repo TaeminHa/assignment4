@@ -1,0 +1,3331 @@
+SIMULATION CONFIGURATION
+--------------------------------------
+(-n) # layer5 msgs to be provided:      40
+(-d) avg layer5 msg interarrival time:  50.0
+(-z) transport protocol seqnum limit:   32
+(-l) layer3 packet loss prob:           0.3
+(-c) layer3 packet corruption prob:     0.3
+(-s) simulation random seed:            8
+--------------------------------------
+
+===== SIMULATION BEGINS
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 0.0
+            INSERTEVENT: future time will be 22.67058593810488
+
+EVENT time: 22.67058593810488, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 22.67058593810488
+            INSERTEVENT: future time will be 118.90008952154317
+          MAINLOOP: data given to student: b'aaaaaaaaaaaaaaaaaaaa'
+          TO_LAYER3: packet being lost
+timer started
+          START TIMER: starting timer at 22.67058593810488
+            INSERTEVENT: time is 22.67058593810488
+            INSERTEVENT: future time will be 32.67058593810488
+
+EVENT time: 32.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 32.67058593810488
+            INSERTEVENT: time is 32.67058593810488
+            INSERTEVENT: future time will be 42.67058593810488
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 32.67058593810488
+            INSERTEVENT: future time will be 41.66361425140551
+
+EVENT time: 41.66361425140551, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being lost
+
+EVENT time: 42.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 42.67058593810488
+            INSERTEVENT: time is 42.67058593810488
+            INSERTEVENT: future time will be 52.67058593810488
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 42.67058593810488
+            INSERTEVENT: future time will be 47.29564538721002
+
+EVENT time: 47.29564538721002, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'aaaaaaaaaaaaaaaaaaaa'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 47.29564538721002
+            INSERTEVENT: future time will be 52.176441237617084
+
+EVENT time: 52.176441237617084, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 52.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 52.67058593810488
+            INSERTEVENT: time is 52.67058593810488
+            INSERTEVENT: future time will be 62.67058593810488
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 52.67058593810488
+            INSERTEVENT: future time will be 57.83200851308179
+
+EVENT time: 57.83200851308179, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 57.83200851308179
+            INSERTEVENT: future time will be 64.64002398559707
+
+EVENT time: 62.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 62.67058593810488
+            INSERTEVENT: time is 62.67058593810488
+            INSERTEVENT: future time will be 72.67058593810488
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 62.67058593810488
+            INSERTEVENT: future time will be 68.63192963359835
+
+EVENT time: 64.64002398559707, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 2
+new buffer dict_keys([])
+
+EVENT time: 68.63192963359835, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 68.63192963359835
+            INSERTEVENT: future time will be 72.33943833077547
+
+EVENT time: 72.33943833077547, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 72.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 72.67058593810488
+            INSERTEVENT: time is 72.67058593810488
+            INSERTEVENT: future time will be 82.67058593810488
+
+EVENT time: 82.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 82.67058593810488
+            INSERTEVENT: time is 82.67058593810488
+            INSERTEVENT: future time will be 92.67058593810488
+
+EVENT time: 92.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 92.67058593810488
+            INSERTEVENT: time is 92.67058593810488
+            INSERTEVENT: future time will be 102.67058593810488
+
+EVENT time: 102.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 102.67058593810488
+            INSERTEVENT: time is 102.67058593810488
+            INSERTEVENT: future time will be 112.67058593810488
+
+EVENT time: 112.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 112.67058593810488
+            INSERTEVENT: time is 112.67058593810488
+            INSERTEVENT: future time will be 122.67058593810488
+
+EVENT time: 118.90008952154317, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 118.90008952154317
+            INSERTEVENT: future time will be 188.03014668214038
+          MAINLOOP: data given to student: b'bbbbbbbbbbbbbbbbbbbb'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 118.90008952154317
+            INSERTEVENT: future time will be 127.11108920158044
+timer started
+          START TIMER: starting timer at 118.90008952154317
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 122.67058593810488, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 122.67058593810488
+            INSERTEVENT: time is 122.67058593810488
+            INSERTEVENT: future time will be 132.67058593810486
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 122.67058593810488
+            INSERTEVENT: future time will be 135.67950067327305
+
+EVENT time: 127.11108920158044, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'bbbbbbbbbbbbbbbbbbbb'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 127.11108920158044
+            INSERTEVENT: future time will be 131.76119460219886
+
+EVENT time: 131.76119460219886, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 132.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 132.67058593810486
+            INSERTEVENT: time is 132.67058593810486
+            INSERTEVENT: future time will be 142.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 132.67058593810486
+            INSERTEVENT: future time will be 141.1380611613002
+
+EVENT time: 135.67950067327305, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 135.67950067327305
+            INSERTEVENT: future time will be 137.94589873146668
+
+EVENT time: 137.94589873146668, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 3
+new buffer dict_keys([])
+
+EVENT time: 141.1380611613002, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 141.1380611613002
+            INSERTEVENT: future time will be 144.6483542100483
+
+EVENT time: 142.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 142.67058593810486
+            INSERTEVENT: time is 142.67058593810486
+            INSERTEVENT: future time will be 152.67058593810486
+
+EVENT time: 144.6483542100483, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 152.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 152.67058593810486
+            INSERTEVENT: time is 152.67058593810486
+            INSERTEVENT: future time will be 162.67058593810486
+
+EVENT time: 162.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 162.67058593810486
+            INSERTEVENT: time is 162.67058593810486
+            INSERTEVENT: future time will be 172.67058593810486
+
+EVENT time: 172.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 172.67058593810486
+            INSERTEVENT: time is 172.67058593810486
+            INSERTEVENT: future time will be 182.67058593810486
+
+EVENT time: 182.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 182.67058593810486
+            INSERTEVENT: time is 182.67058593810486
+            INSERTEVENT: future time will be 192.67058593810486
+
+EVENT time: 188.03014668214038, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 188.03014668214038
+            INSERTEVENT: future time will be 223.73319773512776
+          MAINLOOP: data given to student: b'cccccccccccccccccccc'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 188.03014668214038
+            INSERTEVENT: future time will be 194.02203241560463
+timer started
+          START TIMER: starting timer at 188.03014668214038
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 192.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 192.67058593810486
+            INSERTEVENT: time is 192.67058593810486
+            INSERTEVENT: future time will be 202.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 192.67058593810486
+            INSERTEVENT: future time will be 197.2968683305616
+
+EVENT time: 194.02203241560463, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'cccccccccccccccccccc'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 194.02203241560463
+            INSERTEVENT: future time will be 201.87580848354207
+
+EVENT time: 197.2968683305616, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 197.2968683305616
+            INSERTEVENT: future time will be 205.62942793052818
+
+EVENT time: 201.87580848354207, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 4
+new buffer dict_keys([])
+
+EVENT time: 202.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 202.67058593810486
+            INSERTEVENT: time is 202.67058593810486
+            INSERTEVENT: future time will be 212.67058593810486
+
+EVENT time: 205.62942793052818, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 212.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 212.67058593810486
+            INSERTEVENT: time is 212.67058593810486
+            INSERTEVENT: future time will be 222.67058593810486
+
+EVENT time: 222.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 222.67058593810486
+            INSERTEVENT: time is 222.67058593810486
+            INSERTEVENT: future time will be 232.67058593810486
+
+EVENT time: 223.73319773512776, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 223.73319773512776
+            INSERTEVENT: future time will be 314.52361702453504
+          MAINLOOP: data given to student: b'dddddddddddddddddddd'
+          TO_LAYER3: packet being lost
+timer started
+          START TIMER: starting timer at 223.73319773512776
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 232.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 232.67058593810486
+            INSERTEVENT: time is 232.67058593810486
+            INSERTEVENT: future time will be 242.67058593810486
+          TO_LAYER3: packet being lost
+
+EVENT time: 242.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 242.67058593810486
+            INSERTEVENT: time is 242.67058593810486
+            INSERTEVENT: future time will be 252.67058593810486
+          TO_LAYER3: packet being lost
+
+EVENT time: 252.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 252.67058593810486
+            INSERTEVENT: time is 252.67058593810486
+            INSERTEVENT: future time will be 262.67058593810486
+          TO_LAYER3: packet being lost
+
+EVENT time: 262.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 262.67058593810486
+            INSERTEVENT: time is 262.67058593810486
+            INSERTEVENT: future time will be 272.67058593810486
+          TO_LAYER3: packet being lost
+
+EVENT time: 272.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 272.67058593810486
+            INSERTEVENT: time is 272.67058593810486
+            INSERTEVENT: future time will be 282.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 272.67058593810486
+            INSERTEVENT: future time will be 278.93011173763347
+
+EVENT time: 278.93011173763347, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'dddddddddddddddddddd'
+          TO_LAYER3: packet being lost
+
+EVENT time: 282.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 282.67058593810486
+            INSERTEVENT: time is 282.67058593810486
+            INSERTEVENT: future time will be 292.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 282.67058593810486
+            INSERTEVENT: future time will be 283.87565275025105
+
+EVENT time: 283.87565275025105, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 283.87565275025105
+            INSERTEVENT: future time will be 291.2469959316405
+
+EVENT time: 291.2469959316405, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 292.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 292.67058593810486
+            INSERTEVENT: time is 292.67058593810486
+            INSERTEVENT: future time will be 302.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 292.67058593810486
+            INSERTEVENT: future time will be 298.22359213624924
+
+EVENT time: 298.22359213624924, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 298.22359213624924
+            INSERTEVENT: future time will be 302.4808318009207
+
+EVENT time: 302.4808318009207, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 302.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 302.67058593810486
+            INSERTEVENT: time is 302.67058593810486
+            INSERTEVENT: future time will be 312.67058593810486
+          TO_LAYER3: packet being lost
+
+EVENT time: 312.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 312.67058593810486
+            INSERTEVENT: time is 312.67058593810486
+            INSERTEVENT: future time will be 322.67058593810486
+          TO_LAYER3: packet being lost
+
+EVENT time: 314.52361702453504, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 314.52361702453504
+            INSERTEVENT: future time will be 386.2080193228005
+          MAINLOOP: data given to student: b'eeeeeeeeeeeeeeeeeeee'
+          TO_LAYER3: packet being lost
+
+EVENT time: 322.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 322.67058593810486
+            INSERTEVENT: time is 322.67058593810486
+            INSERTEVENT: future time will be 332.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 322.67058593810486
+            INSERTEVENT: future time will be 327.8888582283444
+          TO_LAYER3: packet being lost
+
+EVENT time: 327.8888582283444, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 327.8888582283444
+            INSERTEVENT: future time will be 330.0771225375166
+
+EVENT time: 330.0771225375166, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 5
+new buffer dict_keys([5])
+
+EVENT time: 332.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 332.67058593810486
+            INSERTEVENT: time is 332.67058593810486
+            INSERTEVENT: future time will be 342.67058593810486
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 332.67058593810486
+            INSERTEVENT: future time will be 336.76124958922594
+
+EVENT time: 336.76124958922594, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 336.76124958922594
+            INSERTEVENT: future time will be 340.5728036829108
+
+EVENT time: 340.5728036829108, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 342.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 342.67058593810486
+            INSERTEVENT: time is 342.67058593810486
+            INSERTEVENT: future time will be 352.67058593810486
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 342.67058593810486
+            INSERTEVENT: future time will be 344.1559137109117
+
+EVENT time: 344.1559137109117, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 344.1559137109117
+            INSERTEVENT: future time will be 352.1071417787495
+
+EVENT time: 352.1071417787495, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 352.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 352.67058593810486
+            INSERTEVENT: time is 352.67058593810486
+            INSERTEVENT: future time will be 362.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 352.67058593810486
+            INSERTEVENT: future time will be 355.0463679616419
+
+EVENT time: 355.0463679616419, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'eeeeeeeeeeeeeeeeeeee'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 355.0463679616419
+            INSERTEVENT: future time will be 357.01397802777893
+
+EVENT time: 357.01397802777893, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 6
+new buffer dict_keys([])
+
+EVENT time: 362.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 362.67058593810486
+            INSERTEVENT: time is 362.67058593810486
+            INSERTEVENT: future time will be 372.67058593810486
+
+EVENT time: 372.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 372.67058593810486
+            INSERTEVENT: time is 372.67058593810486
+            INSERTEVENT: future time will be 382.67058593810486
+
+EVENT time: 382.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 382.67058593810486
+            INSERTEVENT: time is 382.67058593810486
+            INSERTEVENT: future time will be 392.67058593810486
+
+EVENT time: 386.2080193228005, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 386.2080193228005
+            INSERTEVENT: future time will be 406.2539663123083
+          MAINLOOP: data given to student: b'ffffffffffffffffffff'
+          TO_LAYER3: packet being lost
+timer started
+          START TIMER: starting timer at 386.2080193228005
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 392.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 392.67058593810486
+            INSERTEVENT: time is 392.67058593810486
+            INSERTEVENT: future time will be 402.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 392.67058593810486
+            INSERTEVENT: future time will be 396.71928806615887
+
+EVENT time: 396.71928806615887, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'ffffffffffffffffffff'
+          TO_LAYER3: packet being lost
+
+EVENT time: 402.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 402.67058593810486
+            INSERTEVENT: time is 402.67058593810486
+            INSERTEVENT: future time will be 412.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 402.67058593810486
+            INSERTEVENT: future time will be 409.42535672006795
+
+EVENT time: 406.2539663123083, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 406.2539663123083
+            INSERTEVENT: future time will be 457.70222859068946
+          MAINLOOP: data given to student: b'gggggggggggggggggggg'
+          TO_LAYER3: packet being lost
+
+EVENT time: 409.42535672006795, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 409.42535672006795
+            INSERTEVENT: future time will be 416.95704781594515
+
+EVENT time: 412.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 412.67058593810486
+            INSERTEVENT: time is 412.67058593810486
+            INSERTEVENT: future time will be 422.67058593810486
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 412.67058593810486
+            INSERTEVENT: future time will be 414.56174953212326
+          TO_LAYER3: packet being lost
+
+EVENT time: 414.56174953212326, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 416.95704781594515, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 7
+new buffer dict_keys([7])
+
+EVENT time: 422.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 422.67058593810486
+            INSERTEVENT: time is 422.67058593810486
+            INSERTEVENT: future time will be 432.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 422.67058593810486
+            INSERTEVENT: future time will be 428.91228505934754
+
+EVENT time: 428.91228505934754, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'gggggggggggggggggggg'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 428.91228505934754
+            INSERTEVENT: future time will be 437.74151673686697
+
+EVENT time: 432.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 432.67058593810486
+            INSERTEVENT: time is 432.67058593810486
+            INSERTEVENT: future time will be 442.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 432.67058593810486
+            INSERTEVENT: future time will be 440.2247576019358
+
+EVENT time: 437.74151673686697, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 8
+new buffer dict_keys([])
+
+EVENT time: 440.2247576019358, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 440.2247576019358
+            INSERTEVENT: future time will be 443.81762864357586
+
+EVENT time: 442.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 442.67058593810486
+            INSERTEVENT: time is 442.67058593810486
+            INSERTEVENT: future time will be 452.67058593810486
+
+EVENT time: 443.81762864357586, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 452.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 452.67058593810486
+            INSERTEVENT: time is 452.67058593810486
+            INSERTEVENT: future time will be 462.67058593810486
+
+EVENT time: 457.70222859068946, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 457.70222859068946
+            INSERTEVENT: future time will be 496.11332786361936
+          MAINLOOP: data given to student: b'hhhhhhhhhhhhhhhhhhhh'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 457.70222859068946
+            INSERTEVENT: future time will be 461.07408998347665
+timer started
+          START TIMER: starting timer at 457.70222859068946
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 461.07408998347665, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being lost
+
+EVENT time: 462.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 462.67058593810486
+            INSERTEVENT: time is 462.67058593810486
+            INSERTEVENT: future time will be 472.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 462.67058593810486
+            INSERTEVENT: future time will be 466.8936435195098
+
+EVENT time: 466.8936435195098, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'hhhhhhhhhhhhhhhhhhhh'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 466.8936435195098
+            INSERTEVENT: future time will be 473.8474592401427
+
+EVENT time: 472.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 472.67058593810486
+            INSERTEVENT: time is 472.67058593810486
+            INSERTEVENT: future time will be 482.67058593810486
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 472.67058593810486
+            INSERTEVENT: future time will be 476.2372119812025
+
+EVENT time: 473.8474592401427, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 476.2372119812025, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 476.2372119812025
+            INSERTEVENT: future time will be 480.09216215787507
+
+EVENT time: 480.09216215787507, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 9
+new buffer dict_keys([])
+
+EVENT time: 482.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 482.67058593810486
+            INSERTEVENT: time is 482.67058593810486
+            INSERTEVENT: future time will be 492.67058593810486
+
+EVENT time: 492.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 492.67058593810486
+            INSERTEVENT: time is 492.67058593810486
+            INSERTEVENT: future time will be 502.67058593810486
+
+EVENT time: 496.11332786361936, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 496.11332786361936
+            INSERTEVENT: future time will be 585.6404574659227
+          MAINLOOP: data given to student: b'iiiiiiiiiiiiiiiiiiii'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 496.11332786361936
+            INSERTEVENT: future time will be 500.1420985463467
+timer started
+          START TIMER: starting timer at 496.11332786361936
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 500.1420985463467, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 500.1420985463467
+            INSERTEVENT: future time will be 502.78409590100284
+
+EVENT time: 502.67058593810486, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 502.67058593810486
+            INSERTEVENT: time is 502.67058593810486
+            INSERTEVENT: future time will be 512.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 502.67058593810486
+            INSERTEVENT: future time will be 511.0223192462019
+
+EVENT time: 502.78409590100284, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 511.0223192462019, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'iiiiiiiiiiiiiiiiiiii'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 511.0223192462019
+            INSERTEVENT: future time will be 514.8686053535587
+
+EVENT time: 512.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 512.6705859381049
+            INSERTEVENT: time is 512.6705859381049
+            INSERTEVENT: future time will be 522.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 512.6705859381049
+            INSERTEVENT: future time will be 519.055325064519
+
+EVENT time: 514.8686053535587, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 10
+new buffer dict_keys([])
+
+EVENT time: 519.055325064519, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 522.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 522.6705859381049
+            INSERTEVENT: time is 522.6705859381049
+            INSERTEVENT: future time will be 532.6705859381049
+
+EVENT time: 532.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 532.6705859381049
+            INSERTEVENT: time is 532.6705859381049
+            INSERTEVENT: future time will be 542.6705859381049
+
+EVENT time: 542.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 542.6705859381049
+            INSERTEVENT: time is 542.6705859381049
+            INSERTEVENT: future time will be 552.6705859381049
+
+EVENT time: 552.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 552.6705859381049
+            INSERTEVENT: time is 552.6705859381049
+            INSERTEVENT: future time will be 562.6705859381049
+
+EVENT time: 562.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 562.6705859381049
+            INSERTEVENT: time is 562.6705859381049
+            INSERTEVENT: future time will be 572.6705859381049
+
+EVENT time: 572.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 572.6705859381049
+            INSERTEVENT: time is 572.6705859381049
+            INSERTEVENT: future time will be 582.6705859381049
+
+EVENT time: 582.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 582.6705859381049
+            INSERTEVENT: time is 582.6705859381049
+            INSERTEVENT: future time will be 592.6705859381049
+
+EVENT time: 585.6404574659227, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 585.6404574659227
+            INSERTEVENT: future time will be 667.9094663176697
+          MAINLOOP: data given to student: b'jjjjjjjjjjjjjjjjjjjj'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 585.6404574659227
+            INSERTEVENT: future time will be 590.6263921843605
+timer started
+          START TIMER: starting timer at 585.6404574659227
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 590.6263921843605, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 590.6263921843605
+            INSERTEVENT: future time will be 597.8668978866798
+
+EVENT time: 592.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 592.6705859381049
+            INSERTEVENT: time is 592.6705859381049
+            INSERTEVENT: future time will be 602.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 592.6705859381049
+            INSERTEVENT: future time will be 601.5644452227232
+
+EVENT time: 597.8668978866798, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 601.5644452227232, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'jjjjjjjjjjjjjjjjjjjj'
+          TO_LAYER3: packet being lost
+
+EVENT time: 602.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 602.6705859381049
+            INSERTEVENT: time is 602.6705859381049
+            INSERTEVENT: future time will be 612.6705859381049
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 602.6705859381049
+            INSERTEVENT: future time will be 605.6268863374894
+
+EVENT time: 605.6268863374894, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 612.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 612.6705859381049
+            INSERTEVENT: time is 612.6705859381049
+            INSERTEVENT: future time will be 622.6705859381049
+          TO_LAYER3: packet being lost
+
+EVENT time: 622.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 622.6705859381049
+            INSERTEVENT: time is 622.6705859381049
+            INSERTEVENT: future time will be 632.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 622.6705859381049
+            INSERTEVENT: future time will be 625.5444319810522
+
+EVENT time: 625.5444319810522, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 625.5444319810522
+            INSERTEVENT: future time will be 628.1074976510621
+
+EVENT time: 628.1074976510621, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 11
+new buffer dict_keys([])
+
+EVENT time: 632.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 632.6705859381049
+            INSERTEVENT: time is 632.6705859381049
+            INSERTEVENT: future time will be 642.6705859381049
+
+EVENT time: 642.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 642.6705859381049
+            INSERTEVENT: time is 642.6705859381049
+            INSERTEVENT: future time will be 652.6705859381049
+
+EVENT time: 652.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 652.6705859381049
+            INSERTEVENT: time is 652.6705859381049
+            INSERTEVENT: future time will be 662.6705859381049
+
+EVENT time: 662.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 662.6705859381049
+            INSERTEVENT: time is 662.6705859381049
+            INSERTEVENT: future time will be 672.6705859381049
+
+EVENT time: 667.9094663176697, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 667.9094663176697
+            INSERTEVENT: future time will be 717.5743077466398
+          MAINLOOP: data given to student: b'kkkkkkkkkkkkkkkkkkkk'
+          TO_LAYER3: packet being lost
+timer started
+          START TIMER: starting timer at 667.9094663176697
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 672.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 672.6705859381049
+            INSERTEVENT: time is 672.6705859381049
+            INSERTEVENT: future time will be 682.6705859381049
+          TO_LAYER3: packet being lost
+
+EVENT time: 682.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 682.6705859381049
+            INSERTEVENT: time is 682.6705859381049
+            INSERTEVENT: future time will be 692.6705859381049
+          TO_LAYER3: packet being lost
+
+EVENT time: 692.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 692.6705859381049
+            INSERTEVENT: time is 692.6705859381049
+            INSERTEVENT: future time will be 702.6705859381049
+          TO_LAYER3: packet being lost
+
+EVENT time: 702.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 702.6705859381049
+            INSERTEVENT: time is 702.6705859381049
+            INSERTEVENT: future time will be 712.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 702.6705859381049
+            INSERTEVENT: future time will be 704.0316898176907
+
+EVENT time: 704.0316898176907, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'kkkkkkkkkkkkkkkkkkkk'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 704.0316898176907
+            INSERTEVENT: future time will be 707.1487611534263
+
+EVENT time: 707.1487611534263, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 712.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 712.6705859381049
+            INSERTEVENT: time is 712.6705859381049
+            INSERTEVENT: future time will be 722.6705859381049
+          TO_LAYER3: packet being lost
+
+EVENT time: 717.5743077466398, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 717.5743077466398
+            INSERTEVENT: future time will be 763.5479192718714
+          MAINLOOP: data given to student: b'llllllllllllllllllll'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 717.5743077466398
+            INSERTEVENT: future time will be 719.5850253536066
+
+EVENT time: 719.5850253536066, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 719.5850253536066
+            INSERTEVENT: future time will be 721.1128147269997
+
+EVENT time: 721.1128147269997, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 12
+new buffer dict_keys([12])
+
+EVENT time: 722.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 722.6705859381049
+            INSERTEVENT: time is 722.6705859381049
+            INSERTEVENT: future time will be 732.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 722.6705859381049
+            INSERTEVENT: future time will be 724.3422235244045
+
+EVENT time: 724.3422235244045, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'llllllllllllllllllll'
+          TO_LAYER3: packet being lost
+
+EVENT time: 732.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 732.6705859381049
+            INSERTEVENT: time is 732.6705859381049
+            INSERTEVENT: future time will be 742.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 732.6705859381049
+            INSERTEVENT: future time will be 734.2703891959758
+
+EVENT time: 734.2703891959758, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 742.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 742.6705859381049
+            INSERTEVENT: time is 742.6705859381049
+            INSERTEVENT: future time will be 752.6705859381049
+          TO_LAYER3: packet being lost
+
+EVENT time: 752.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 752.6705859381049
+            INSERTEVENT: time is 752.6705859381049
+            INSERTEVENT: future time will be 762.6705859381049
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 752.6705859381049
+            INSERTEVENT: future time will be 761.4082833800876
+
+EVENT time: 761.4082833800876, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 762.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 762.6705859381049
+            INSERTEVENT: time is 762.6705859381049
+            INSERTEVENT: future time will be 772.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 762.6705859381049
+            INSERTEVENT: future time will be 768.5468389080879
+
+EVENT time: 763.5479192718714, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 763.5479192718714
+            INSERTEVENT: future time will be 807.0037645084543
+          MAINLOOP: data given to student: b'mmmmmmmmmmmmmmmmmmmm'
+          TO_LAYER3: packet being lost
+
+EVENT time: 768.5468389080879, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 768.5468389080879
+            INSERTEVENT: future time will be 770.0678700553161
+
+EVENT time: 770.0678700553161, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 772.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 772.6705859381049
+            INSERTEVENT: time is 772.6705859381049
+            INSERTEVENT: future time will be 782.6705859381049
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 772.6705859381049
+            INSERTEVENT: future time will be 779.665831466262
+          TO_LAYER3: packet being lost
+
+EVENT time: 779.665831466262, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 782.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 782.6705859381049
+            INSERTEVENT: time is 782.6705859381049
+            INSERTEVENT: future time will be 792.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 782.6705859381049
+            INSERTEVENT: future time will be 790.2712068141034
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 782.6705859381049
+            INSERTEVENT: future time will be 798.3264148559056
+
+EVENT time: 790.2712068141034, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 790.2712068141034
+            INSERTEVENT: future time will be 795.7739220869034
+
+EVENT time: 792.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 792.6705859381049
+            INSERTEVENT: time is 792.6705859381049
+            INSERTEVENT: future time will be 802.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 792.6705859381049
+            INSERTEVENT: future time will be 806.7763803179708
+          TO_LAYER3: packet being lost
+
+EVENT time: 795.7739220869034, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 13
+new buffer dict_keys([13])
+
+EVENT time: 798.3264148559056, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'mmmmmmmmmmmmmmmmmmmm'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 798.3264148559056
+            INSERTEVENT: future time will be 800.6781046198704
+
+EVENT time: 800.6781046198704, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 14
+new buffer dict_keys([])
+
+EVENT time: 802.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 802.6705859381049
+            INSERTEVENT: time is 802.6705859381049
+            INSERTEVENT: future time will be 812.6705859381049
+
+EVENT time: 806.7763803179708, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 806.7763803179708
+            INSERTEVENT: future time will be 813.1191173140114
+
+EVENT time: 807.0037645084543, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 807.0037645084543
+            INSERTEVENT: future time will be 835.7379488740496
+          MAINLOOP: data given to student: b'nnnnnnnnnnnnnnnnnnnn'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 807.0037645084543
+            INSERTEVENT: future time will be 813.4961654465214
+timer started
+          START TIMER: starting timer at 807.0037645084543
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 812.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 812.6705859381049
+            INSERTEVENT: time is 812.6705859381049
+            INSERTEVENT: future time will be 822.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 812.6705859381049
+            INSERTEVENT: future time will be 819.0080516845817
+
+EVENT time: 813.1191173140114, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 813.4961654465214, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'nnnnnnnnnnnnnnnnnnnn'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 813.4961654465214
+            INSERTEVENT: future time will be 820.3721984453218
+
+EVENT time: 819.0080516845817, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 819.0080516845817
+            INSERTEVENT: future time will be 828.9371733777465
+
+EVENT time: 820.3721984453218, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 15
+new buffer dict_keys([])
+
+EVENT time: 822.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 822.6705859381049
+            INSERTEVENT: time is 822.6705859381049
+            INSERTEVENT: future time will be 832.6705859381049
+
+EVENT time: 828.9371733777465, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 832.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 832.6705859381049
+            INSERTEVENT: time is 832.6705859381049
+            INSERTEVENT: future time will be 842.6705859381049
+
+EVENT time: 835.7379488740496, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 835.7379488740496
+            INSERTEVENT: future time will be 919.0400459918683
+          MAINLOOP: data given to student: b'oooooooooooooooooooo'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 835.7379488740496
+            INSERTEVENT: future time will be 840.7905741447537
+timer started
+          START TIMER: starting timer at 835.7379488740496
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 840.7905741447537, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 840.7905741447537
+            INSERTEVENT: future time will be 848.2458306794191
+
+EVENT time: 842.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 842.6705859381049
+            INSERTEVENT: time is 842.6705859381049
+            INSERTEVENT: future time will be 852.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 842.6705859381049
+            INSERTEVENT: future time will be 844.7488799664391
+
+EVENT time: 844.7488799664391, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'oooooooooooooooooooo'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 844.7488799664391
+            INSERTEVENT: future time will be 851.5754223944018
+
+EVENT time: 848.2458306794191, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 851.5754223944018, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 16
+new buffer dict_keys([])
+
+EVENT time: 852.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 852.6705859381049
+            INSERTEVENT: time is 852.6705859381049
+            INSERTEVENT: future time will be 862.6705859381049
+
+EVENT time: 862.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 862.6705859381049
+            INSERTEVENT: time is 862.6705859381049
+            INSERTEVENT: future time will be 872.6705859381049
+
+EVENT time: 872.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 872.6705859381049
+            INSERTEVENT: time is 872.6705859381049
+            INSERTEVENT: future time will be 882.6705859381049
+
+EVENT time: 882.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 882.6705859381049
+            INSERTEVENT: time is 882.6705859381049
+            INSERTEVENT: future time will be 892.6705859381049
+
+EVENT time: 892.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 892.6705859381049
+            INSERTEVENT: time is 892.6705859381049
+            INSERTEVENT: future time will be 902.6705859381049
+
+EVENT time: 902.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 902.6705859381049
+            INSERTEVENT: time is 902.6705859381049
+            INSERTEVENT: future time will be 912.6705859381049
+
+EVENT time: 912.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 912.6705859381049
+            INSERTEVENT: time is 912.6705859381049
+            INSERTEVENT: future time will be 922.6705859381049
+
+EVENT time: 919.0400459918683, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 919.0400459918683
+            INSERTEVENT: future time will be 922.2456829066508
+          MAINLOOP: data given to student: b'pppppppppppppppppppp'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 919.0400459918683
+            INSERTEVENT: future time will be 922.4087473513217
+timer started
+          START TIMER: starting timer at 919.0400459918683
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 922.2456829066508, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 922.2456829066508
+            INSERTEVENT: future time will be 959.7541860299804
+          MAINLOOP: data given to student: b'qqqqqqqqqqqqqqqqqqqq'
+          TO_LAYER3: packet being lost
+
+EVENT time: 922.4087473513217, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'pppppppppppppppppppp'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 922.4087473513217
+            INSERTEVENT: future time will be 923.5245351601997
+
+EVENT time: 922.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 922.6705859381049
+            INSERTEVENT: time is 922.6705859381049
+            INSERTEVENT: future time will be 932.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 922.6705859381049
+            INSERTEVENT: future time will be 931.2535128746957
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 922.6705859381049
+            INSERTEVENT: future time will be 936.7663158111474
+
+EVENT time: 923.5245351601997, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 17
+new buffer dict_keys([17])
+
+EVENT time: 931.2535128746957, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 931.2535128746957
+            INSERTEVENT: future time will be 935.2352519784348
+
+EVENT time: 932.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 932.6705859381049
+            INSERTEVENT: time is 932.6705859381049
+            INSERTEVENT: future time will be 942.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 932.6705859381049
+            INSERTEVENT: future time will be 943.4920955028391
+
+EVENT time: 935.2352519784348, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 936.7663158111474, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'qqqqqqqqqqqqqqqqqqqq'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 936.7663158111474
+            INSERTEVENT: future time will be 938.6165386935826
+
+EVENT time: 938.6165386935826, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 18
+new buffer dict_keys([])
+
+EVENT time: 942.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 942.6705859381049
+            INSERTEVENT: time is 942.6705859381049
+            INSERTEVENT: future time will be 952.6705859381049
+
+EVENT time: 943.4920955028391, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 943.4920955028391
+            INSERTEVENT: future time will be 948.3066794818011
+
+EVENT time: 948.3066794818011, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 952.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 952.6705859381049
+            INSERTEVENT: time is 952.6705859381049
+            INSERTEVENT: future time will be 962.6705859381049
+
+EVENT time: 959.7541860299804, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 959.7541860299804
+            INSERTEVENT: future time will be 1017.3929342781082
+          MAINLOOP: data given to student: b'rrrrrrrrrrrrrrrrrrrr'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 959.7541860299804
+            INSERTEVENT: future time will be 964.190404612069
+timer started
+          START TIMER: starting timer at 959.7541860299804
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 962.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 962.6705859381049
+            INSERTEVENT: time is 962.6705859381049
+            INSERTEVENT: future time will be 972.6705859381049
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 962.6705859381049
+            INSERTEVENT: future time will be 971.0664465692505
+
+EVENT time: 964.190404612069, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'rrrrrrrrrrrrrrrrrrrr'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 964.190404612069
+            INSERTEVENT: future time will be 970.3960453043702
+
+EVENT time: 970.3960453043702, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 19
+new buffer dict_keys([])
+
+EVENT time: 971.0664465692505, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 972.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 972.6705859381049
+            INSERTEVENT: time is 972.6705859381049
+            INSERTEVENT: future time will be 982.6705859381049
+
+EVENT time: 982.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 982.6705859381049
+            INSERTEVENT: time is 982.6705859381049
+            INSERTEVENT: future time will be 992.6705859381049
+
+EVENT time: 992.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 992.6705859381049
+            INSERTEVENT: time is 992.6705859381049
+            INSERTEVENT: future time will be 1002.6705859381049
+
+EVENT time: 1002.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1002.6705859381049
+            INSERTEVENT: time is 1002.6705859381049
+            INSERTEVENT: future time will be 1012.6705859381049
+
+EVENT time: 1012.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1012.6705859381049
+            INSERTEVENT: time is 1012.6705859381049
+            INSERTEVENT: future time will be 1022.6705859381049
+
+EVENT time: 1017.3929342781082, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1017.3929342781082
+            INSERTEVENT: future time will be 1113.3244361379936
+          MAINLOOP: data given to student: b'ssssssssssssssssssss'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1017.3929342781082
+            INSERTEVENT: future time will be 1022.2009185444786
+timer started
+          START TIMER: starting timer at 1017.3929342781082
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1022.2009185444786, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'ssssssssssssssssssss'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1022.6705859381049, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1022.6705859381049
+            INSERTEVENT: time is 1022.6705859381049
+            INSERTEVENT: future time will be 1032.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1032.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1032.670585938105
+            INSERTEVENT: time is 1032.670585938105
+            INSERTEVENT: future time will be 1042.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1042.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1042.670585938105
+            INSERTEVENT: time is 1042.670585938105
+            INSERTEVENT: future time will be 1052.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1052.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1052.670585938105
+            INSERTEVENT: time is 1052.670585938105
+            INSERTEVENT: future time will be 1062.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1052.670585938105
+            INSERTEVENT: future time will be 1057.3049745542755
+
+EVENT time: 1057.3049745542755, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 1062.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1062.670585938105
+            INSERTEVENT: time is 1062.670585938105
+            INSERTEVENT: future time will be 1072.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1062.670585938105
+            INSERTEVENT: future time will be 1068.9229120468708
+
+EVENT time: 1068.9229120468708, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 1072.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1072.670585938105
+            INSERTEVENT: time is 1072.670585938105
+            INSERTEVENT: future time will be 1082.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1072.670585938105
+            INSERTEVENT: future time will be 1074.7570813720547
+
+EVENT time: 1074.7570813720547, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1074.7570813720547
+            INSERTEVENT: future time will be 1081.092618236838
+
+EVENT time: 1081.092618236838, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 1082.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1082.670585938105
+            INSERTEVENT: time is 1082.670585938105
+            INSERTEVENT: future time will be 1092.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1082.670585938105
+            INSERTEVENT: future time will be 1085.2961721227632
+
+EVENT time: 1085.2961721227632, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1085.2961721227632
+            INSERTEVENT: future time will be 1092.5521927370357
+
+EVENT time: 1092.5521927370357, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 20
+new buffer dict_keys([])
+
+EVENT time: 1092.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1092.670585938105
+            INSERTEVENT: time is 1092.670585938105
+            INSERTEVENT: future time will be 1102.670585938105
+
+EVENT time: 1102.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1102.670585938105
+            INSERTEVENT: time is 1102.670585938105
+            INSERTEVENT: future time will be 1112.670585938105
+
+EVENT time: 1112.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1112.670585938105
+            INSERTEVENT: time is 1112.670585938105
+            INSERTEVENT: future time will be 1122.670585938105
+
+EVENT time: 1113.3244361379936, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1113.3244361379936
+            INSERTEVENT: future time will be 1163.7472288880201
+          MAINLOOP: data given to student: b'tttttttttttttttttttt'
+          TO_LAYER3: packet being lost
+timer started
+          START TIMER: starting timer at 1113.3244361379936
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1122.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1122.670585938105
+            INSERTEVENT: time is 1122.670585938105
+            INSERTEVENT: future time will be 1132.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1122.670585938105
+            INSERTEVENT: future time will be 1126.1617412774447
+
+EVENT time: 1126.1617412774447, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'tttttttttttttttttttt'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1132.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1132.670585938105
+            INSERTEVENT: time is 1132.670585938105
+            INSERTEVENT: future time will be 1142.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1132.670585938105
+            INSERTEVENT: future time will be 1140.0638947086009
+
+EVENT time: 1140.0638947086009, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1140.0638947086009
+            INSERTEVENT: future time will be 1147.6960563981106
+
+EVENT time: 1142.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1142.670585938105
+            INSERTEVENT: time is 1142.670585938105
+            INSERTEVENT: future time will be 1152.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1142.670585938105
+            INSERTEVENT: future time will be 1143.803506485686
+
+EVENT time: 1143.803506485686, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 1147.6960563981106, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 1152.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1152.670585938105
+            INSERTEVENT: time is 1152.670585938105
+            INSERTEVENT: future time will be 1162.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1152.670585938105
+            INSERTEVENT: future time will be 1154.0241373743238
+
+EVENT time: 1154.0241373743238, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 1162.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1162.670585938105
+            INSERTEVENT: time is 1162.670585938105
+            INSERTEVENT: future time will be 1172.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1162.670585938105
+            INSERTEVENT: future time will be 1170.4449093419673
+
+EVENT time: 1163.7472288880201, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1163.7472288880201
+            INSERTEVENT: future time will be 1250.6983788735106
+          MAINLOOP: data given to student: b'uuuuuuuuuuuuuuuuuuuu'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1163.7472288880201
+            INSERTEVENT: future time will be 1173.065326429137
+
+EVENT time: 1170.4449093419673, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1170.4449093419673
+            INSERTEVENT: future time will be 1177.9982583589858
+
+EVENT time: 1172.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1172.670585938105
+            INSERTEVENT: time is 1172.670585938105
+            INSERTEVENT: future time will be 1182.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1172.670585938105
+            INSERTEVENT: future time will be 1174.661694929484
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1172.670585938105
+            INSERTEVENT: future time will be 1181.9555439009105
+
+EVENT time: 1173.065326429137, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'uuuuuuuuuuuuuuuuuuuu'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1173.065326429137
+            INSERTEVENT: future time will be 1182.4883708816383
+
+EVENT time: 1174.661694929484, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being lost
+
+EVENT time: 1177.9982583589858, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 21
+new buffer dict_keys([21])
+
+EVENT time: 1181.9555439009105, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1181.9555439009105
+            INSERTEVENT: future time will be 1191.4118310688211
+
+EVENT time: 1182.4883708816383, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 22
+new buffer dict_keys([])
+
+EVENT time: 1182.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1182.670585938105
+            INSERTEVENT: time is 1182.670585938105
+            INSERTEVENT: future time will be 1192.670585938105
+
+EVENT time: 1191.4118310688211, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1192.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1192.670585938105
+            INSERTEVENT: time is 1192.670585938105
+            INSERTEVENT: future time will be 1202.670585938105
+
+EVENT time: 1202.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1202.670585938105
+            INSERTEVENT: time is 1202.670585938105
+            INSERTEVENT: future time will be 1212.670585938105
+
+EVENT time: 1212.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1212.670585938105
+            INSERTEVENT: time is 1212.670585938105
+            INSERTEVENT: future time will be 1222.670585938105
+
+EVENT time: 1222.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1222.670585938105
+            INSERTEVENT: time is 1222.670585938105
+            INSERTEVENT: future time will be 1232.670585938105
+
+EVENT time: 1232.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1232.670585938105
+            INSERTEVENT: time is 1232.670585938105
+            INSERTEVENT: future time will be 1242.670585938105
+
+EVENT time: 1242.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1242.670585938105
+            INSERTEVENT: time is 1242.670585938105
+            INSERTEVENT: future time will be 1252.670585938105
+
+EVENT time: 1250.6983788735106, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1250.6983788735106
+            INSERTEVENT: future time will be 1279.170269758341
+          MAINLOOP: data given to student: b'vvvvvvvvvvvvvvvvvvvv'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1250.6983788735106
+            INSERTEVENT: future time will be 1252.9886259696643
+timer started
+          START TIMER: starting timer at 1250.6983788735106
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1252.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1252.670585938105
+            INSERTEVENT: time is 1252.670585938105
+            INSERTEVENT: future time will be 1262.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1252.9886259696643, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'vvvvvvvvvvvvvvvvvvvv'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1252.9886259696643
+            INSERTEVENT: future time will be 1256.450640020286
+
+EVENT time: 1256.450640020286, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 23
+new buffer dict_keys([])
+
+EVENT time: 1262.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1262.670585938105
+            INSERTEVENT: time is 1262.670585938105
+            INSERTEVENT: future time will be 1272.670585938105
+
+EVENT time: 1272.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1272.670585938105
+            INSERTEVENT: time is 1272.670585938105
+            INSERTEVENT: future time will be 1282.670585938105
+
+EVENT time: 1279.170269758341, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1279.170269758341
+            INSERTEVENT: future time will be 1306.842286828172
+          MAINLOOP: data given to student: b'wwwwwwwwwwwwwwwwwwww'
+          TO_LAYER3: packet being lost
+timer started
+          START TIMER: starting timer at 1279.170269758341
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1282.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1282.670585938105
+            INSERTEVENT: time is 1282.670585938105
+            INSERTEVENT: future time will be 1292.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1282.670585938105
+            INSERTEVENT: future time will be 1289.229454209281
+
+EVENT time: 1289.229454209281, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'wwwwwwwwwwwwwwwwwwww'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1292.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1292.670585938105
+            INSERTEVENT: time is 1292.670585938105
+            INSERTEVENT: future time will be 1302.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1302.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1302.670585938105
+            INSERTEVENT: time is 1302.670585938105
+            INSERTEVENT: future time will be 1312.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1302.670585938105
+            INSERTEVENT: future time will be 1311.1612604207003
+
+EVENT time: 1306.842286828172, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1306.842286828172
+            INSERTEVENT: future time will be 1405.7872879641943
+          MAINLOOP: data given to student: b'xxxxxxxxxxxxxxxxxxxx'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1311.1612604207003, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1311.1612604207003
+            INSERTEVENT: future time will be 1314.9284438373647
+
+EVENT time: 1312.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1312.670585938105
+            INSERTEVENT: time is 1312.670585938105
+            INSERTEVENT: future time will be 1322.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1312.670585938105
+            INSERTEVENT: future time will be 1319.1413085239187
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1312.670585938105
+            INSERTEVENT: future time will be 1327.9071933027028
+
+EVENT time: 1314.9284438373647, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 1319.1413085239187, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1319.1413085239187
+            INSERTEVENT: future time will be 1323.8924441173788
+
+EVENT time: 1322.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1322.670585938105
+            INSERTEVENT: time is 1322.670585938105
+            INSERTEVENT: future time will be 1332.670585938105
+          TO_LAYER3: packet being lost
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1322.670585938105
+            INSERTEVENT: future time will be 1330.2008222668449
+
+EVENT time: 1323.8924441173788, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 24
+new buffer dict_keys([24])
+
+EVENT time: 1327.9071933027028, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'xxxxxxxxxxxxxxxxxxxx'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1330.2008222668449, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 1332.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1332.670585938105
+            INSERTEVENT: time is 1332.670585938105
+            INSERTEVENT: future time will be 1342.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1332.670585938105
+            INSERTEVENT: future time will be 1335.278321532484
+
+EVENT time: 1335.278321532484, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1335.278321532484
+            INSERTEVENT: future time will be 1338.4110899889492
+
+EVENT time: 1338.4110899889492, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 25
+new buffer dict_keys([])
+
+EVENT time: 1342.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1342.670585938105
+            INSERTEVENT: time is 1342.670585938105
+            INSERTEVENT: future time will be 1352.670585938105
+
+EVENT time: 1352.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1352.670585938105
+            INSERTEVENT: time is 1352.670585938105
+            INSERTEVENT: future time will be 1362.670585938105
+
+EVENT time: 1362.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1362.670585938105
+            INSERTEVENT: time is 1362.670585938105
+            INSERTEVENT: future time will be 1372.670585938105
+
+EVENT time: 1372.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1372.670585938105
+            INSERTEVENT: time is 1372.670585938105
+            INSERTEVENT: future time will be 1382.670585938105
+
+EVENT time: 1382.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1382.670585938105
+            INSERTEVENT: time is 1382.670585938105
+            INSERTEVENT: future time will be 1392.670585938105
+
+EVENT time: 1392.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1392.670585938105
+            INSERTEVENT: time is 1392.670585938105
+            INSERTEVENT: future time will be 1402.670585938105
+
+EVENT time: 1402.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1402.670585938105
+            INSERTEVENT: time is 1402.670585938105
+            INSERTEVENT: future time will be 1412.670585938105
+
+EVENT time: 1405.7872879641943, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1405.7872879641943
+            INSERTEVENT: future time will be 1450.240318284677
+          MAINLOOP: data given to student: b'yyyyyyyyyyyyyyyyyyyy'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1405.7872879641943
+            INSERTEVENT: future time will be 1411.5377778784762
+timer started
+          START TIMER: starting timer at 1405.7872879641943
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1411.5377778784762, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1411.5377778784762
+            INSERTEVENT: future time will be 1415.73111563819
+
+EVENT time: 1412.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1412.670585938105
+            INSERTEVENT: time is 1412.670585938105
+            INSERTEVENT: future time will be 1422.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1412.670585938105
+            INSERTEVENT: future time will be 1420.5259140166634
+
+EVENT time: 1415.73111563819, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1420.5259140166634, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1420.5259140166634
+            INSERTEVENT: future time will be 1426.3145412245738
+
+EVENT time: 1422.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1422.670585938105
+            INSERTEVENT: time is 1422.670585938105
+            INSERTEVENT: future time will be 1432.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1422.670585938105
+            INSERTEVENT: future time will be 1430.7430630320514
+
+EVENT time: 1426.3145412245738, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1430.7430630320514, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'yyyyyyyyyyyyyyyyyyyy'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1430.7430630320514
+            INSERTEVENT: future time will be 1437.2435299450642
+
+EVENT time: 1432.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1432.670585938105
+            INSERTEVENT: time is 1432.670585938105
+            INSERTEVENT: future time will be 1442.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1432.670585938105
+            INSERTEVENT: future time will be 1440.6813685125599
+
+EVENT time: 1437.2435299450642, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 1440.6813685125599, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 1442.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1442.670585938105
+            INSERTEVENT: time is 1442.670585938105
+            INSERTEVENT: future time will be 1452.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1450.240318284677, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1450.240318284677
+            INSERTEVENT: future time will be 1455.7001551542228
+          MAINLOOP: data given to student: b'zzzzzzzzzzzzzzzzzzzz'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1450.240318284677
+            INSERTEVENT: future time will be 1453.227143490442
+
+EVENT time: 1452.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1452.670585938105
+            INSERTEVENT: time is 1452.670585938105
+            INSERTEVENT: future time will be 1462.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1452.670585938105
+            INSERTEVENT: future time will be 1459.8966678211161
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1452.670585938105
+            INSERTEVENT: future time will be 1468.6127663973436
+
+EVENT time: 1453.227143490442, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1453.227143490442
+            INSERTEVENT: future time will be 1458.0471910380875
+
+EVENT time: 1455.7001551542228, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1455.7001551542228
+            INSERTEVENT: future time will be 1502.490161601365
+          MAINLOOP: data given to student: b'aaaaaaaaaaaaaaaaaaaa'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1455.7001551542228
+            INSERTEVENT: future time will be 1473.940744947614
+
+EVENT time: 1458.0471910380875, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 1459.8966678211161, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1459.8966678211161
+            INSERTEVENT: future time will be 1465.0082168269707
+
+EVENT time: 1462.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1462.670585938105
+            INSERTEVENT: time is 1462.670585938105
+            INSERTEVENT: future time will be 1472.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1462.670585938105
+            INSERTEVENT: future time will be 1478.530899507415
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1462.670585938105
+            INSERTEVENT: future time will be 1480.8092990931
+          TO_LAYER3: packet being lost
+
+EVENT time: 1465.0082168269707, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 26
+new buffer dict_keys([26, 27])
+
+EVENT time: 1468.6127663973436, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'zzzzzzzzzzzzzzzzzzzz'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1468.6127663973436
+            INSERTEVENT: future time will be 1475.187940739216
+
+EVENT time: 1472.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1472.670585938105
+            INSERTEVENT: time is 1472.670585938105
+            INSERTEVENT: future time will be 1482.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1472.670585938105
+            INSERTEVENT: future time will be 1486.3411750340356
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1472.670585938105
+            INSERTEVENT: future time will be 1490.9143845912301
+
+EVENT time: 1473.940744947614, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'aaaaaaaaaaaaaaaaaaaa'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1475.187940739216, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 27
+new buffer dict_keys([27])
+
+EVENT time: 1478.530899507415, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being lost
+
+EVENT time: 1480.8092990931, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1480.8092990931
+            INSERTEVENT: future time will be 1484.665684941212
+
+EVENT time: 1482.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1482.670585938105
+            INSERTEVENT: time is 1482.670585938105
+            INSERTEVENT: future time will be 1492.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1482.670585938105
+            INSERTEVENT: future time will be 1496.7684627622323
+
+EVENT time: 1484.665684941212, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 28
+new buffer dict_keys([])
+
+EVENT time: 1486.3411750340356, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being lost
+
+EVENT time: 1490.9143845912301, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1490.9143845912301
+            INSERTEVENT: future time will be 1497.6286724657173
+
+EVENT time: 1492.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1492.670585938105
+            INSERTEVENT: time is 1492.670585938105
+            INSERTEVENT: future time will be 1502.670585938105
+
+EVENT time: 1496.7684627622323, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1496.7684627622323
+            INSERTEVENT: future time will be 1504.2384083088446
+
+EVENT time: 1497.6286724657173, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1502.490161601365, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1502.490161601365
+            INSERTEVENT: future time will be 1521.479724199961
+          MAINLOOP: data given to student: b'bbbbbbbbbbbbbbbbbbbb'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1502.490161601365
+            INSERTEVENT: future time will be 1508.5249233788588
+timer started
+          START TIMER: starting timer at 1502.490161601365
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1502.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1502.670585938105
+            INSERTEVENT: time is 1502.670585938105
+            INSERTEVENT: future time will be 1512.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1504.2384083088446, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1508.5249233788588, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'bbbbbbbbbbbbbbbbbbbb'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1512.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1512.670585938105
+            INSERTEVENT: time is 1512.670585938105
+            INSERTEVENT: future time will be 1522.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1521.479724199961, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1521.479724199961
+            INSERTEVENT: future time will be 1533.8594898461213
+          MAINLOOP: data given to student: b'cccccccccccccccccccc'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1522.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1522.670585938105
+            INSERTEVENT: time is 1522.670585938105
+            INSERTEVENT: future time will be 1532.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1522.670585938105
+            INSERTEVENT: future time will be 1529.3187088563018
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1522.670585938105
+            INSERTEVENT: future time will be 1530.5555476452814
+
+EVENT time: 1529.3187088563018, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1529.3187088563018
+            INSERTEVENT: future time will be 1534.8985398031934
+
+EVENT time: 1530.5555476452814, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'cccccccccccccccccccc'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1530.5555476452814
+            INSERTEVENT: future time will be 1538.8436833988098
+
+EVENT time: 1532.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1532.670585938105
+            INSERTEVENT: time is 1532.670585938105
+            INSERTEVENT: future time will be 1542.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1532.670585938105
+            INSERTEVENT: future time will be 1537.5626865359889
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1532.670585938105
+            INSERTEVENT: future time will be 1541.3821220803675
+
+EVENT time: 1533.8594898461213, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1533.8594898461213
+            INSERTEVENT: future time will be 1572.8352669118956
+          MAINLOOP: data given to student: b'dddddddddddddddddddd'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1533.8594898461213
+            INSERTEVENT: future time will be 1549.6745719534542
+
+EVENT time: 1534.8985398031934, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 1537.5626865359889, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1537.5626865359889
+            INSERTEVENT: future time will be 1547.4749694045624
+
+EVENT time: 1538.8436833988098, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 30
+new buffer dict_keys([30])
+
+EVENT time: 1541.3821220803675, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1541.3821220803675
+            INSERTEVENT: future time will be 1554.6928394060103
+
+EVENT time: 1542.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1542.670585938105
+            INSERTEVENT: time is 1542.670585938105
+            INSERTEVENT: future time will be 1552.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1542.670585938105
+            INSERTEVENT: future time will be 1555.5271271426266
+
+EVENT time: 1547.4749694045624, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1549.6745719534542, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'dddddddddddddddddddd'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1549.6745719534542
+            INSERTEVENT: future time will be 1562.9911602448026
+
+EVENT time: 1552.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1552.670585938105
+            INSERTEVENT: time is 1552.670585938105
+            INSERTEVENT: future time will be 1562.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1554.6928394060103, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1555.5271271426266, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1555.5271271426266
+            INSERTEVENT: future time will be 1566.660021454243
+
+EVENT time: 1562.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1562.670585938105
+            INSERTEVENT: time is 1562.670585938105
+            INSERTEVENT: future time will be 1572.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1562.670585938105
+            INSERTEVENT: future time will be 1566.225520115624
+
+EVENT time: 1562.9911602448026, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 31
+new buffer dict_keys([])
+
+EVENT time: 1566.225520115624, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1566.225520115624
+            INSERTEVENT: future time will be 1573.4546707750987
+
+EVENT time: 1566.660021454243, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1572.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1572.670585938105
+            INSERTEVENT: time is 1572.670585938105
+            INSERTEVENT: future time will be 1582.670585938105
+
+EVENT time: 1572.8352669118956, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1572.8352669118956
+            INSERTEVENT: future time will be 1586.4717615034451
+          MAINLOOP: data given to student: b'eeeeeeeeeeeeeeeeeeee'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1572.8352669118956
+            INSERTEVENT: future time will be 1575.0670971643706
+timer started
+          START TIMER: starting timer at 1572.8352669118956
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1573.4546707750987, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1575.0670971643706, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being lost
+
+EVENT time: 1582.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1582.670585938105
+            INSERTEVENT: time is 1582.670585938105
+            INSERTEVENT: future time will be 1592.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1582.670585938105
+            INSERTEVENT: future time will be 1587.6257636200494
+
+EVENT time: 1586.4717615034451, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1586.4717615034451
+            INSERTEVENT: future time will be 1673.916501238241
+          MAINLOOP: data given to student: b'ffffffffffffffffffff'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1586.4717615034451
+            INSERTEVENT: future time will be 1596.2854396398805
+
+EVENT time: 1587.6257636200494, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'eeeeeeeeeeeeeeeeeeee'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1587.6257636200494
+            INSERTEVENT: future time will be 1592.1107393952088
+
+EVENT time: 1592.1107393952088, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 0
+new buffer dict_keys([0])
+
+EVENT time: 1592.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1592.670585938105
+            INSERTEVENT: time is 1592.670585938105
+            INSERTEVENT: future time will be 1602.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1592.670585938105
+            INSERTEVENT: future time will be 1604.5600153453624
+
+EVENT time: 1596.2854396398805, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1596.2854396398805
+            INSERTEVENT: future time will be 1602.253730348073
+
+EVENT time: 1602.253730348073, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1602.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1602.670585938105
+            INSERTEVENT: time is 1602.670585938105
+            INSERTEVENT: future time will be 1612.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1602.670585938105
+            INSERTEVENT: future time will be 1611.360183576979
+
+EVENT time: 1604.5600153453624, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1604.5600153453624
+            INSERTEVENT: future time will be 1605.8885521330194
+
+EVENT time: 1605.8885521330194, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1611.360183576979, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'ffffffffffffffffffff'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1611.360183576979
+            INSERTEVENT: future time will be 1616.7228682730831
+
+EVENT time: 1612.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1612.670585938105
+            INSERTEVENT: time is 1612.670585938105
+            INSERTEVENT: future time will be 1622.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1612.670585938105
+            INSERTEVENT: future time will be 1619.448833645565
+
+EVENT time: 1616.7228682730831, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 1
+new buffer dict_keys([])
+
+EVENT time: 1619.448833645565, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 1622.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1622.670585938105
+            INSERTEVENT: time is 1622.670585938105
+            INSERTEVENT: future time will be 1632.670585938105
+
+EVENT time: 1632.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1632.670585938105
+            INSERTEVENT: time is 1632.670585938105
+            INSERTEVENT: future time will be 1642.670585938105
+
+EVENT time: 1642.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1642.670585938105
+            INSERTEVENT: time is 1642.670585938105
+            INSERTEVENT: future time will be 1652.670585938105
+
+EVENT time: 1652.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1652.670585938105
+            INSERTEVENT: time is 1652.670585938105
+            INSERTEVENT: future time will be 1662.670585938105
+
+EVENT time: 1662.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1662.670585938105
+            INSERTEVENT: time is 1662.670585938105
+            INSERTEVENT: future time will be 1672.670585938105
+
+EVENT time: 1672.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1672.670585938105
+            INSERTEVENT: time is 1672.670585938105
+            INSERTEVENT: future time will be 1682.670585938105
+
+EVENT time: 1673.916501238241, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1673.916501238241
+            INSERTEVENT: future time will be 1687.647763512206
+          MAINLOOP: data given to student: b'gggggggggggggggggggg'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1673.916501238241
+            INSERTEVENT: future time will be 1681.9830117579188
+timer started
+          START TIMER: starting timer at 1673.916501238241
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1681.9830117579188, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'gggggggggggggggggggg'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1681.9830117579188
+            INSERTEVENT: future time will be 1685.853797521081
+
+EVENT time: 1682.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1682.670585938105
+            INSERTEVENT: time is 1682.670585938105
+            INSERTEVENT: future time will be 1692.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1685.853797521081, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 2
+new buffer dict_keys([])
+
+EVENT time: 1687.647763512206, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1687.647763512206
+            INSERTEVENT: future time will be 1785.2552516012347
+          MAINLOOP: data given to student: b'hhhhhhhhhhhhhhhhhhhh'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1687.647763512206
+            INSERTEVENT: future time will be 1692.7194835305256
+timer started
+          START TIMER: starting timer at 1687.647763512206
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1692.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1692.670585938105
+            INSERTEVENT: time is 1692.670585938105
+            INSERTEVENT: future time will be 1702.670585938105
+          TO_LAYER3: packet being lost
+
+EVENT time: 1692.7194835305256, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'hhhhhhhhhhhhhhhhhhhh'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1692.7194835305256
+            INSERTEVENT: future time will be 1695.254467703285
+
+EVENT time: 1695.254467703285, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 3
+new buffer dict_keys([])
+
+EVENT time: 1702.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1702.670585938105
+            INSERTEVENT: time is 1702.670585938105
+            INSERTEVENT: future time will be 1712.670585938105
+
+EVENT time: 1712.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1712.670585938105
+            INSERTEVENT: time is 1712.670585938105
+            INSERTEVENT: future time will be 1722.670585938105
+
+EVENT time: 1722.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1722.670585938105
+            INSERTEVENT: time is 1722.670585938105
+            INSERTEVENT: future time will be 1732.670585938105
+
+EVENT time: 1732.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1732.670585938105
+            INSERTEVENT: time is 1732.670585938105
+            INSERTEVENT: future time will be 1742.670585938105
+
+EVENT time: 1742.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1742.670585938105
+            INSERTEVENT: time is 1742.670585938105
+            INSERTEVENT: future time will be 1752.670585938105
+
+EVENT time: 1752.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1752.670585938105
+            INSERTEVENT: time is 1752.670585938105
+            INSERTEVENT: future time will be 1762.670585938105
+
+EVENT time: 1762.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1762.670585938105
+            INSERTEVENT: time is 1762.670585938105
+            INSERTEVENT: future time will be 1772.670585938105
+
+EVENT time: 1772.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1772.670585938105
+            INSERTEVENT: time is 1772.670585938105
+            INSERTEVENT: future time will be 1782.670585938105
+
+EVENT time: 1782.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1782.670585938105
+            INSERTEVENT: time is 1782.670585938105
+            INSERTEVENT: future time will be 1792.670585938105
+
+EVENT time: 1785.2552516012347, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1785.2552516012347
+            INSERTEVENT: future time will be 1796.5300377184333
+          MAINLOOP: data given to student: b'iiiiiiiiiiiiiiiiiiii'
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1785.2552516012347
+            INSERTEVENT: future time will be 1794.0735349837632
+timer started
+          START TIMER: starting timer at 1785.2552516012347
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1792.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1792.670585938105
+            INSERTEVENT: time is 1792.670585938105
+            INSERTEVENT: future time will be 1802.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1792.670585938105
+            INSERTEVENT: future time will be 1799.1720000914795
+
+EVENT time: 1794.0735349837632, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1794.0735349837632
+            INSERTEVENT: future time will be 1802.869346036051
+
+EVENT time: 1796.5300377184333, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1796.5300377184333
+            INSERTEVENT: future time will be 1875.608530060666
+          MAINLOOP: data given to student: b'jjjjjjjjjjjjjjjjjjjj'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1796.5300377184333
+            INSERTEVENT: future time will be 1802.602658441457
+
+EVENT time: 1799.1720000914795, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'iiiiiiiiiiiiiiiiiiii'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1802.602658441457, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'jjjjjjjjjjjjjjjjjjjj'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1802.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1802.670585938105
+            INSERTEVENT: time is 1802.670585938105
+            INSERTEVENT: future time will be 1812.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1802.670585938105
+            INSERTEVENT: future time will be 1808.6580066526324
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1802.670585938105
+            INSERTEVENT: future time will be 1816.7558310797108
+
+EVENT time: 1802.869346036051, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1808.6580066526324, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1808.6580066526324
+            INSERTEVENT: future time will be 1815.4273563182019
+
+EVENT time: 1812.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1812.670585938105
+            INSERTEVENT: time is 1812.670585938105
+            INSERTEVENT: future time will be 1822.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1812.670585938105
+            INSERTEVENT: future time will be 1823.5437015442665
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1812.670585938105
+            INSERTEVENT: future time will be 1832.2945333690298
+
+EVENT time: 1815.4273563182019, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 1816.7558310797108, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1816.7558310797108
+            INSERTEVENT: future time will be 1818.8405144600624
+
+EVENT time: 1818.8405144600624, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 5
+new buffer dict_keys([])
+
+EVENT time: 1822.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1822.670585938105
+            INSERTEVENT: time is 1822.670585938105
+            INSERTEVENT: future time will be 1832.670585938105
+
+EVENT time: 1823.5437015442665, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1823.5437015442665
+            INSERTEVENT: future time will be 1830.0979841635683
+
+EVENT time: 1830.0979841635683, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1832.2945333690298, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1832.2945333690298
+            INSERTEVENT: future time will be 1838.3123654576573
+
+EVENT time: 1832.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1832.670585938105
+            INSERTEVENT: time is 1832.670585938105
+            INSERTEVENT: future time will be 1842.670585938105
+
+EVENT time: 1838.3123654576573, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1842.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1842.670585938105
+            INSERTEVENT: time is 1842.670585938105
+            INSERTEVENT: future time will be 1852.670585938105
+
+EVENT time: 1852.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1852.670585938105
+            INSERTEVENT: time is 1852.670585938105
+            INSERTEVENT: future time will be 1862.670585938105
+
+EVENT time: 1862.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1862.670585938105
+            INSERTEVENT: time is 1862.670585938105
+            INSERTEVENT: future time will be 1872.670585938105
+
+EVENT time: 1872.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1872.670585938105
+            INSERTEVENT: time is 1872.670585938105
+            INSERTEVENT: future time will be 1882.670585938105
+
+EVENT time: 1875.608530060666, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1875.608530060666
+            INSERTEVENT: future time will be 1930.204633281548
+          MAINLOOP: data given to student: b'kkkkkkkkkkkkkkkkkkkk'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1875.608530060666
+            INSERTEVENT: future time will be 1884.2726077938985
+timer started
+          START TIMER: starting timer at 1875.608530060666
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1882.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1882.670585938105
+            INSERTEVENT: time is 1882.670585938105
+            INSERTEVENT: future time will be 1892.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1882.670585938105
+            INSERTEVENT: future time will be 1892.3524043766542
+
+EVENT time: 1884.2726077938985, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'kkkkkkkkkkkkkkkkkkkk'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1892.3524043766542, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 1892.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1892.670585938105
+            INSERTEVENT: time is 1892.670585938105
+            INSERTEVENT: future time will be 1902.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1892.670585938105
+            INSERTEVENT: future time will be 1901.5170949710575
+
+EVENT time: 1901.5170949710575, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1901.5170949710575
+            INSERTEVENT: future time will be 1908.114889836508
+
+EVENT time: 1902.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1902.670585938105
+            INSERTEVENT: time is 1902.670585938105
+            INSERTEVENT: future time will be 1912.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1902.670585938105
+            INSERTEVENT: future time will be 1909.2073743421024
+
+EVENT time: 1908.114889836508, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 6
+new buffer dict_keys([])
+
+EVENT time: 1909.2073743421024, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being lost
+
+EVENT time: 1912.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1912.670585938105
+            INSERTEVENT: time is 1912.670585938105
+            INSERTEVENT: future time will be 1922.670585938105
+
+EVENT time: 1922.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1922.670585938105
+            INSERTEVENT: time is 1922.670585938105
+            INSERTEVENT: future time will be 1932.670585938105
+
+EVENT time: 1930.204633281548, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1930.204633281548
+            INSERTEVENT: future time will be 1992.821439430213
+          MAINLOOP: data given to student: b'llllllllllllllllllll'
+          TO_LAYER3: packet being lost
+timer started
+          START TIMER: starting timer at 1930.204633281548
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 1932.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1932.670585938105
+            INSERTEVENT: time is 1932.670585938105
+            INSERTEVENT: future time will be 1942.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1932.670585938105
+            INSERTEVENT: future time will be 1941.0340077734722
+
+EVENT time: 1941.0340077734722, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'llllllllllllllllllll'
+          TO_LAYER3: packet being lost
+
+EVENT time: 1942.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1942.670585938105
+            INSERTEVENT: time is 1942.670585938105
+            INSERTEVENT: future time will be 1952.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1942.670585938105
+            INSERTEVENT: future time will be 1945.3127963912293
+
+EVENT time: 1945.3127963912293, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1945.3127963912293
+            INSERTEVENT: future time will be 1952.6614900313807
+
+EVENT time: 1952.6614900313807, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 1952.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1952.670585938105
+            INSERTEVENT: time is 1952.670585938105
+            INSERTEVENT: future time will be 1962.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1952.670585938105
+            INSERTEVENT: future time will be 1957.5988737923003
+
+EVENT time: 1957.5988737923003, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1957.5988737923003
+            INSERTEVENT: future time will be 1961.1806433436514
+
+EVENT time: 1961.1806433436514, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+
+EVENT time: 1962.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1962.670585938105
+            INSERTEVENT: time is 1962.670585938105
+            INSERTEVENT: future time will be 1972.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1962.670585938105
+            INSERTEVENT: future time will be 1966.6823008496901
+
+EVENT time: 1966.6823008496901, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1966.6823008496901
+            INSERTEVENT: future time will be 1974.3236939675235
+
+EVENT time: 1972.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1972.670585938105
+            INSERTEVENT: time is 1972.670585938105
+            INSERTEVENT: future time will be 1982.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1972.670585938105
+            INSERTEVENT: future time will be 1980.1002252914948
+
+EVENT time: 1974.3236939675235, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 7
+new buffer dict_keys([])
+
+EVENT time: 1980.1002252914948, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1980.1002252914948
+            INSERTEVENT: future time will be 1983.6353801254304
+
+EVENT time: 1982.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1982.670585938105
+            INSERTEVENT: time is 1982.670585938105
+            INSERTEVENT: future time will be 1992.670585938105
+
+EVENT time: 1983.6353801254304, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+
+EVENT time: 1992.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 1992.670585938105
+            INSERTEVENT: time is 1992.670585938105
+            INSERTEVENT: future time will be 2002.670585938105
+
+EVENT time: 1992.821439430213, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 1992.821439430213
+            INSERTEVENT: future time will be 2019.1128556802817
+          MAINLOOP: data given to student: b'mmmmmmmmmmmmmmmmmmmm'
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 1992.821439430213
+            INSERTEVENT: future time will be 2000.7154232293851
+timer started
+          START TIMER: starting timer at 1992.821439430213
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 2000.7154232293851, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'mmmmmmmmmmmmmmmmmmmm'
+          TO_LAYER3: packet being lost
+
+EVENT time: 2002.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 2002.670585938105
+            INSERTEVENT: time is 2002.670585938105
+            INSERTEVENT: future time will be 2012.670585938105
+          TO_LAYER3: packet being corrupted
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 2002.670585938105
+            INSERTEVENT: future time will be 2004.1588387855643
+
+EVENT time: 2004.1588387855643, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 2004.1588387855643
+            INSERTEVENT: future time will be 2012.450259792075
+
+EVENT time: 2012.450259792075, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 8
+new buffer dict_keys([])
+
+EVENT time: 2012.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 2012.670585938105
+            INSERTEVENT: time is 2012.670585938105
+            INSERTEVENT: future time will be 2022.670585938105
+
+EVENT time: 2019.1128556802817, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 2019.1128556802817
+            INSERTEVENT: future time will be 2054.979098298769
+          MAINLOOP: data given to student: b'nnnnnnnnnnnnnnnnnnnn'
+          TO_LAYER3: packet being lost
+timer started
+          START TIMER: starting timer at 2019.1128556802817
+WARNING: attempt to start a timer that is already started!
+
+EVENT time: 2022.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 2022.670585938105
+            INSERTEVENT: time is 2022.670585938105
+            INSERTEVENT: future time will be 2032.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 2022.670585938105
+            INSERTEVENT: future time will be 2025.1926485269375
+
+EVENT time: 2025.1926485269375, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+          TO_LAYER5: data received: b'nnnnnnnnnnnnnnnnnnnn'
+          TO_LAYER3: packet being lost
+
+EVENT time: 2032.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 2032.670585938105
+            INSERTEVENT: time is 2032.670585938105
+            INSERTEVENT: future time will be 2042.670585938105
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 2032.670585938105
+            INSERTEVENT: future time will be 2037.8485200618954
+
+EVENT time: 2037.8485200618954, from_layer3, entity: <transport.part2.RcvTransport object at 0x1032a4290>
+RECEIVER: Duplicate Packet; Previous ACK failed
+          TO_LAYER3: scheduling arrival on other side
+            INSERTEVENT: time is 2037.8485200618954
+            INSERTEVENT: future time will be 2039.8547968877458
+
+EVENT time: 2039.8547968877458, from_layer3, entity: <transport.part2.SndTransport object at 0x1032a4250>
+updated window []
+new base 9
+new buffer dict_keys([])
+
+EVENT time: 2042.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 2042.670585938105
+            INSERTEVENT: time is 2042.670585938105
+            INSERTEVENT: future time will be 2052.670585938105
+
+EVENT time: 2052.670585938105, timer_interrupt, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          START TIMER: starting timer at 2052.670585938105
+            INSERTEVENT: time is 2052.670585938105
+            INSERTEVENT: future time will be 2062.670585938105
+
+EVENT time: 2054.979098298769, from_layer5, entity: <transport.part2.SndTransport object at 0x1032a4250>
+          GENERATE NEXT ARRIVAL: creating new arrival
+            INSERTEVENT: time is 2054.979098298769
+            INSERTEVENT: future time will be 2080.9398032021995
+          MAINLOOP: data given to student: b'oooooooooooooooooooo'
+          TO_LAYER3: packet being lost
+timer started
+          START TIMER: starting timer at 2054.979098298769
+WARNING: attempt to start a timer that is already started!
+===== SIMULATION ENDS
+
+SIMULATION SUMMARY
+--------------------------------
+# layer5 msgs provided to A:      40
+# elapsed time units:             2054.979098298769
+
+# layer3 packets sent by A:       163
+# layer3 packets sent by B:       120
+# layer3 packets lost:            82
+# layer3 packets corrupted:       57
+# layer5 msgs delivered by A:     0
+# layer5 msgs delivered by B:     40
+# layer5 msgs by B/elapsed time:  0.01946491817513586
+--------------------------------
+SIMULATION CONFIGURATION
+--------------------------------------
+(-n) # layer5 msgs to be provided:      100
+(-d) avg layer5 msg interarrival time:  50.0
+(-z) transport protocol seqnum limit:   32
+(-l) layer3 packet loss prob:           0.3
+(-c) layer3 packet corruption prob:     0.3
+(-s) simulation random seed:            8
+--------------------------------------
+timer started
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 2
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 3
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 4
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 5
+new buffer dict_keys([5])
+updated window []
+new base 6
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 7
+new buffer dict_keys([7])
+updated window []
+new base 8
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 9
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 10
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 11
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 12
+new buffer dict_keys([12])
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 13
+new buffer dict_keys([13])
+updated window []
+new base 14
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 15
+new buffer dict_keys([])
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 16
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 17
+new buffer dict_keys([17])
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 18
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 19
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 20
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 21
+new buffer dict_keys([21])
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 22
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 23
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 24
+new buffer dict_keys([24])
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 25
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 26
+new buffer dict_keys([26, 27])
+updated window []
+new base 27
+new buffer dict_keys([27])
+updated window []
+new base 28
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 30
+new buffer dict_keys([30])
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 31
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 0
+new buffer dict_keys([0])
+updated window []
+new base 1
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 2
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 3
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 5
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 6
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 7
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 8
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 9
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 10
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 12
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 13
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 14
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 15
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 16
+new buffer dict_keys([16])
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 17
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 18
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 20
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 21
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 22
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 24
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 25
+new buffer dict_keys([25])
+updated window []
+new base 26
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 28
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 30
+new buffer dict_keys([30])
+updated window []
+new base 31
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 0
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 1
+new buffer dict_keys([1])
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 2
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 3
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 4
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 5
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 6
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 7
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 8
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 9
+new buffer dict_keys([9, 10, 11])
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 10
+new buffer dict_keys([10, 11])
+updated window []
+new base 12
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 13
+new buffer dict_keys([13])
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 14
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 15
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 17
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 19
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 20
+new buffer dict_keys([20])
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 21
+new buffer dict_keys([21])
+updated window []
+new base 22
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 23
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 24
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 25
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 26
+new buffer dict_keys([])
+RECEIVER: Duplicate Packet; Previous ACK failed
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 27
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+updated window []
+new base 28
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 29
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 30
+new buffer dict_keys([30])
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 31
+new buffer dict_keys([31])
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 0
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+RECEIVER: Duplicate Packet; Previous ACK failed
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+updated window []
+new base 1
+new buffer dict_keys([1])
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 2
+new buffer dict_keys([])
+timer started
+WARNING: attempt to start a timer that is already started!
+SENDER: ERROR: Corrupted Packet; Checksum Mismatch
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 3
+new buffer dict_keys([3])
+RECEIVER: Duplicate Packet; Previous ACK failed
+updated window []
+new base 4
+new buffer dict_keys([4])
+RECEIVER: Duplicate Packet; Previous ACK failed
+
+SIMULATION SUMMARY
+--------------------------------
+# layer5 msgs provided to A:      100
+# elapsed time units:             4753.199791416209
+
+# layer3 packets sent by A:       413
+# layer3 packets sent by B:       287
+# layer3 packets lost:            217
+# layer3 packets corrupted:       139
+# layer5 msgs delivered by A:     0
+# layer5 msgs delivered by B:     100
+# layer5 msgs by B/elapsed time:  0.021038459225002436
+--------------------------------
